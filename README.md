@@ -1,6 +1,6 @@
 > **Noms et prénoms des auteurs du projet**
 > 
-> POINT Yvont 
+> POINT Yvon 
 > GAREA Jeannette 
 > MOHAMED AMINE Jilani 
 > 
