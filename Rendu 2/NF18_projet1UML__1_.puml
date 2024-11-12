@@ -1,0 +1,141 @@
+@startuml
+
+hide circle 
+
+
+
+  abstract class   Ressources <<abstract>>{
+ 
+Code_ressource: INT  {key}
+titre: VARCHAR 
+dateApparition: DATE 
+codeClassification:INT
+  }
+
+class editeur{
+    nom VARCHAR {key}
+}
+
+Ressources "*"-"1" editeur :édité par
+
+class Livre extends Ressources {
+    {field} ISBN: CHAR(20) {key}
+    resume: VARCHAR
+    {field} langue: CHAR(30)
+
+}
+
+class Musique extends Ressources{
+    {field} duree CHAR(8)
+}
+
+class Film extends Ressources{
+    synopsis : VARCHAR
+    {field} duree CHAR(8)
+    {field} langue: CHAR(30)
+    
+}
+
+class Genre{
+nom : VARCHAR {key}
+}
+Ressources "*" - "1..*" Genre : appartient à >
+
+class Exemplaire{
+etat : VARCHAR {key}
+}
+
+Exemplaire "*"--"1" Ressources : < possède
+
+class Pret{
+ debut : DATE NOT NULL
+ duree : INT NOT NULL
+ dateRendu : DATE 
+}
+note  left: durée limitée \n + uniquement ceux "en bon état"
+
+Pret "*"--"1" Exemplaire :  prêté
+
+class Adherent extends Personne {
+login : VARCHAR NOT NULL
+password : VARCHAR NOT NULL
+blackliste : BOOL
+}
+note  "ne peut emprunter qu’un nombre \nlimité d’exemplaires" as N1
+Adherent..N1
+
+Pret "*" -- "1" Adherent :   emprunte
+
+
+ abstract class Personne <<abstract>> {
+ nom : VARCHAR NOT NULL
+ prenom : VARCHAR NOT NULL
+ email: VARCHAR
+ {field} telephoneFixe : CHAR(20)
+ {field} telephonePortable : CHAR(20)
+ }
+ 
+ class Adresse{
+
+{field} numero:CHAR(5) NOT NULL
+rue:VARCHAR NOT NULL
+ }
+
+Personne "*" - "1" Adresse : habite
+
+class Ville{
+nom :VARCHAR NOT NULL
+codePostal:INT {key}
+pays :VARCHAR NOT NULL
+}
+
+Ville "1"--"*" Adresse : est dans
+
+class Contributeur extends Personne {
+
+}
+
+
+class Personnel extends Personne {
+    login : VARCHAR NOT NULL
+    password : VARCHAR NOT NULL
+
+}
+
+note left : peut modifier \nla base de donnée
+
+class Adhesion{
+    NoCarteAdhérent: INT {key}
+    debut : DATE NOT NULL
+    fin : DATE NOT NULL
+    
+
+}
+
+Adhesion "*"-- "1" Adherent : adhère 
+   
+class Sanction{
+    date : DATE  NOT NULL
+    duree : INT  NOT NULL
+    motif: CHAR {"retard","dégradation"}
+
+}
+
+
+
+Sanction "*" -- "1" Adherent : est sanctionné
+
+
+
+Contributeur -- Ressources
+
+
+
+(Contributeur, Ressources) .. Contribue 
+
+
+class Contribue{
+    role : VARCHAR {key}
+}
+
+ @enduml
