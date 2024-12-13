@@ -1,0 +1,4 @@
+remplacer personne.py du fichier rendu5.zip par le fichier du 13/12/2024
+
+
+ correction erreur creation adhérent (manque caractères '' dans sql, ...)
