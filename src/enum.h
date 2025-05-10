@@ -1,6 +1,6 @@
 #pragma once
 
-enum animal {
+enum class animal {
     Ours = 1,
     Cerf,
     Saumon,
@@ -8,7 +8,7 @@ enum animal {
     Renard
 };
 
-enum animalOuPas {
+enum class animalOuPas {
     Vide = 0,
     Ours = 1,
     Cerf, 
@@ -17,7 +17,7 @@ enum animalOuPas {
     Renard
 };
 
-enum habitat {
+enum class habitat {
     Montagne,
     Foret,
     Prairie,
@@ -25,7 +25,7 @@ enum habitat {
     Fleuve
 };
 
-enum presenceAnimal {
+enum class presenceAnimal {
     PasRenard = -5,
     PasAigle,
     PasSaumon,
