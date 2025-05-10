@@ -25,6 +25,7 @@ private:
     int nbTour = 20;
 public:
     Partie();
+    Partie(int nbJoueurs);
     ~Partie();
     bool EstFini();
     Joueur* GetGagnant();
