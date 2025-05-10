@@ -1,4 +1,4 @@
-#pargma once
+#pragma once
 #include "Joueur.h"
 #include "Pioche.h"
 #include "CarteMarquageFaune.h"

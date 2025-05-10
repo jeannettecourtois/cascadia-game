@@ -1,4 +1,4 @@
-#pramga once
+#pragma once
 #include "Tuile.h"
 #include "ControleurGeneral.h"
 

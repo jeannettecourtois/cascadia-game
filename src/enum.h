@@ -24,3 +24,16 @@ enum habitat {
     Marais,
     Fleuve
 };
+
+enum presenceAnimal {
+    PasRenard = -5,
+    PasAigle,
+    PasSaumon,
+    PasCerf,
+    PasOurs,
+    Ours = 1,
+    Cerf,
+    Saumon,
+    Aigle,
+    Renard
+};
