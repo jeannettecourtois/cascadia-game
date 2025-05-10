@@ -1,5 +1,5 @@
 #pragma once
-#include "Tuile.h"
+#include "tuile.h"
 #include "ControleurGeneral.h"
 
 
@@ -16,7 +16,7 @@ public:
     void PreparerPioche();
     void SelectionnerTuile();
     void SelectionnerJeton();
-}
+};
 
 class SacTuile {
 private:
@@ -27,7 +27,7 @@ public:
     ~SacTuile();
     Tuile* Piocher();
     void MettreDansLeSac(Tuile&);
-}
+};
 
 
 class SacJeton {
@@ -43,4 +43,4 @@ public:
     ~SacJeton();
     animal* Piocher();
     void MettreDansLeSac(animal);
-}
+};
