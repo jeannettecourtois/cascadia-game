@@ -1,0 +1,29 @@
+#pragma once
+#include "Partie.h"
+
+class TuileDepart {
+public:
+    TuilePlacee* tuiles[3];
+    TuileDepart();
+    ~TuileDepart();
+}
+
+
+class ControleurGeneral {
+private:
+    int nbTuiles;
+    int nbCartesRegles;
+    int nbTuilesDepart
+    Tuile** tuiles;
+    CarteMarquageFaune** cartesRegles;
+    TuileDepart** tuilesDepart;
+    ControleurGeneral();
+    ~ControleurGeneral();
+public:
+    ControleurGeneral(const ControleurGeneral&) = delete;
+    ControleurGeneral& operator=(const ControleurGeneral&) = delete;
+    static ControleurGeneral& GetInstance() {
+        static ControleurGeneral instance;
+        return instance;
+    }
+}
