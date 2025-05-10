@@ -27,11 +27,13 @@ public:
     void Tourner(const int){}
     const Tuile* GetTuile() const {return tuile;}
     animalOuPas GetJeton() const {return jeton;}
-    void AjouterJeton(const animal);
+    void AjouterJeton(const animalOuPas);
 };
 
-class TuilePlaceeDeplacable : private TuilePlacee {
+class TuilePlaceeDeplacable : public TuilePlacee {
 public:
     void Deplacer(const Position p2){pos.SetPosition(p2); return;}
     void Tourner(const int n){rotation = (rotation + n)%6; return;}
+    Position GetPosition() const { return pos; }
+    int GetRotation() const { return rotation; }
 };

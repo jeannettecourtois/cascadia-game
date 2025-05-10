@@ -6,7 +6,7 @@ class CarteMarquageFaune {
 private:
     animal animalCarte;
 public:
-    CarteMarquageFaune();
+    CarteMarquageFaune(animal a);
     ~CarteMarquageFaune();
     animal GetAnimalCarte() {return animalCarte;}
     int CalculPoints(PlateauJoueur&);
@@ -14,14 +14,14 @@ public:
 
 class CarteMarquageFauneParMasque : public CarteMarquageFaune {
 public:
-    CarteMarquageFauneParMasque();
+    CarteMarquageFauneParMasque(animal a);
     ~CarteMarquageFauneParMasque();
     int CalculPoints(PlateauJoueur&);
 };
 
 class CarteMarquageFauneParDiversiteDeType : public CarteMarquageFaune {//Utile pour le renard
 public:
-    CarteMarquageFauneParDiversiteDeType();
+    CarteMarquageFauneParDiversiteDeType(animal a);
     ~CarteMarquageFauneParDiversiteDeType();
     int CalculPoints(PlateauJoueur&);
 };
