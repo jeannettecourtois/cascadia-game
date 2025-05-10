@@ -8,7 +8,7 @@ public:
     void undo();
 }
 
-class ActionSelectionTuile: class Action {
+class ActionSelectionTuile: public Action {
 private:
     Tuile* tuileSelection;
 public:
@@ -18,7 +18,7 @@ public:
     void undo();
 }
 
-class ActionSelectionJeton: class Action {
+class ActionSelectionJeton: public Action {
 private:
     animalOuPas jetonSelection;
 public:
@@ -28,7 +28,7 @@ public:
     void undo();
 }
 
-class ActionPlacerTuile: class Action {
+class ActionPlacerTuile: public Action {
 private:
     Tuile* tuile;
     Position pos;
@@ -39,7 +39,7 @@ public:
     void undo();
 }
 
-class ActionPlacerJeton: class Action {
+class ActionPlacerJeton: public Action {
 private:
     TuilePlacee* cible;
     animalOuPas jeton;
@@ -50,12 +50,28 @@ public:
     void undo();
 }
 
-class ActionUtiliserJetonNature: class Action {
+class ActionUtiliserJetonNature: public Action {
 private:
     Action* actionCible;
 public:
     ActionUtiliserJetonNature(Action* a);
     ~ActionUtiliserJetonNature();
+    void execute();
+    void undo();
+}
+
+class SelectionTuileJeton : public ActionUtiliserJetonNature {
+public:
+    SelectionTuileJeton();
+    ~SelectionTuileJeton();
+    void execute();
+    void undo();
+}
+
+class SupressionJetonPioche : public ActionUtiliserJetonNature {
+public:
+    SupressionJetonPioche();
+    ~SupressionJetonPioche();
     void execute();
     void undo();
 }

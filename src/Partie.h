@@ -2,11 +2,16 @@
 #include "Joueur.h"
 #include "Pioche.h"
 #include "CarteMarquageFaune.h"
+#include "Action.h"
 
 class ControleurTour {
+    int nbrAction;
+    Action** listeActions; 
 public:
     ControleurTour();
     ~ControleurTour();
+    void ExecuterAction(Action* a)
+    void AnnulerDerniereAction();
 }
 
 
