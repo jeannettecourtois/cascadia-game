@@ -10,9 +10,9 @@ class ControleurTour {
 public:
     ControleurTour();
     ~ControleurTour();
-    void ExecuterAction(Action* a)
+    void ExecuterAction(Action* a);
     void AnnulerDerniereAction();
-}
+};
 
 
 class Partie {
@@ -28,4 +28,4 @@ public:
     ~Partie();
     bool EstFini();
     Joueur* GetGagnant();
-}
+};

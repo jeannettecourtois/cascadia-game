@@ -16,9 +16,9 @@ public:
     int GetNbHabitat() const {return nbHabitat}
     animal** GetListeAnimaux() const {return listeAnimaux}
     habitat** GetListeHabitat() const {return listeHabitat}
-}
+};
 
 class Keystone : public Tuile {
 public:
     void AssociationJeton() const; //Est-ce qu'on met joueur en paramètre ?
-}
+};

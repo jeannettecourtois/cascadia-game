@@ -6,7 +6,7 @@ public:
     TuilePlacee* tuiles[3];
     TuileDepart();
     ~TuileDepart();
-}
+};
 
 
 class ControleurGeneral {
@@ -26,4 +26,4 @@ public:
         static ControleurGeneral instance;
         return instance;
     }
-}
+};

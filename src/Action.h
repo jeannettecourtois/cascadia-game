@@ -1,12 +1,13 @@
 #pragma once
 #include "TuilePlacee.h"
+#include "enum.h"
 
 
 class Action {
 public:
     void execute();
     void undo();
-}
+};
 
 class ActionSelectionTuile: public Action {
 private:
@@ -16,7 +17,7 @@ public:
     ~ActionSelectionTuile();
     void execute();
     void undo();
-}
+};
 
 class ActionSelectionJeton: public Action {
 private:
@@ -26,7 +27,7 @@ public:
     ~ActionSelectionJeton();
     void execute();
     void undo();
-}
+};
 
 class ActionPlacerTuile: public Action {
 private:
@@ -37,7 +38,7 @@ public:
     ~ActionPlacerTuile();
     void execute();
     void undo();
-}
+};
 
 class ActionPlacerJeton: public Action {
 private:
@@ -48,7 +49,7 @@ public:
     ~ActionPlacerJeton();
     void execute();
     void undo();
-}
+};
 
 class ActionUtiliserJetonNature: public Action {
 private:
@@ -58,7 +59,7 @@ public:
     ~ActionUtiliserJetonNature();
     void execute();
     void undo();
-}
+};
 
 class SelectionTuileJeton : public ActionUtiliserJetonNature {
 public:
@@ -66,7 +67,7 @@ public:
     ~SelectionTuileJeton();
     void execute();
     void undo();
-}
+};
 
 class SupressionJetonPioche : public ActionUtiliserJetonNature {
 public:
@@ -74,4 +75,4 @@ public:
     ~SupressionJetonPioche();
     void execute();
     void undo();
-}
+};

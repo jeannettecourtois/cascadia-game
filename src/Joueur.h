@@ -11,7 +11,7 @@ public:
     PlateauJoueur();
     ~PlateauJoueur();
     void AjouterTuile(const TuilePlacee*);
-}
+};
 
 
 class Joueur {
@@ -26,4 +26,4 @@ public:
     int CalculScore();
     int GetNbJetonNature() const { return nbJetonNature; }
     std::string GetNomJoueur() const { return nomJoueur; }
-}
+};

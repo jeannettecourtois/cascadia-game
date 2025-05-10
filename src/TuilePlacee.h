@@ -1,5 +1,5 @@
 #pragma once
-#include "Tuile.h"
+#include "tuile.h"
 
 class Position {
 public:
@@ -10,7 +10,7 @@ public:
     ~Position();
     void SetPosition(const int a, const int b){x=a; y=b; return;}
     void SetPosition(const Position& pos){x=pos.x; y=pos.y; return;}
-}
+};
 
 class TuilePlacee {
 private:
@@ -28,7 +28,7 @@ public:
     Tuile* GetTuile() const {return tuile;}
     animal GetJeton() const {return jeton;}
     void AjouterJeton(const animal);
-}
+};
 
 class TuilePlaceeDeplacable : private TuilePlacee {
 public:
