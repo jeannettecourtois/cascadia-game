@@ -1,5 +1,6 @@
 #pragma once
 #include "Partie.h"
+#include "Joueur.h"
 
 class TuileDepart {
 public:
@@ -13,7 +14,7 @@ class ControleurGeneral {
 private:
     int nbTuiles;
     int nbCartesRegles;
-    int nbTuilesDepart
+    int nbTuilesDepart;
     Tuile** tuiles;
     CarteMarquageFaune** cartesRegles;
     TuileDepart** tuilesDepart;

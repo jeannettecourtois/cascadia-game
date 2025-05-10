@@ -6,7 +6,7 @@ public:
     int x;
     int y;
     Position(const int a, const int b):x(a),y(b){}
-    Position(const Position pos):x(pos.x),y(pos.y){}
+    Position(const Position& pos):x(pos.x),y(pos.y){}
     ~Position();
     void SetPosition(const int a, const int b){x=a; y=b; return;}
     void SetPosition(const Position& pos){x=pos.x; y=pos.y; return;}
@@ -25,8 +25,8 @@ public:
     ~TuilePlacee();
     void Deplacer(const Position){}
     void Tourner(const int){}
-    Tuile* GetTuile() const {return tuile;}
-    animal GetJeton() const {return jeton;}
+    const Tuile* GetTuile() const {return tuile;}
+    animalOuPas GetJeton() const {return jeton;}
     void AjouterJeton(const animal);
 };
 
@@ -34,4 +34,4 @@ class TuilePlaceeDeplacable : private TuilePlacee {
 public:
     void Deplacer(const Position p2){pos.SetPosition(p2); return;}
     void Tourner(const int n){rotation = (rotation + n)%6; return;}
-}
+};

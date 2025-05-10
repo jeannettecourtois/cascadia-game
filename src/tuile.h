@@ -12,10 +12,10 @@ public:
     Tuile();
     ~Tuile();
     void AssociationJeton() const {}
-    int GetNbAnimaux() const {return nbAnimaux}
-    int GetNbHabitat() const {return nbHabitat}
-    animal** GetListeAnimaux() const {return listeAnimaux}
-    habitat** GetListeHabitat() const {return listeHabitat}
+    int GetNbAnimaux() const {return nbAnimaux;}
+    int GetNbHabitat() const {return nbHabitat;}
+    animal** GetListeAnimaux() const {return listeAnimaux;}
+    habitat** GetListeHabitat() const {return listeHabitat;}
 };
 
 class Keystone : public Tuile {

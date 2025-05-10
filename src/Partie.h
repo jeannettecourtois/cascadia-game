@@ -19,7 +19,7 @@ class Partie {
 private:
     CarteMarquageFaune* cartesRegles[5];
     int nbJoueur;
-    Joueur joueurs**;
+    Joueur** joueurs;
     Pioche* pioche;
     ControleurTour* ctrlTour;
     int nbTour = 20;
