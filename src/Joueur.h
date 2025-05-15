@@ -10,7 +10,10 @@ private:
 public:
     PlateauJoueur();
     ~PlateauJoueur();
+    PlateauJoueur(const PlateauJoueur&) = delete;
+    PlateauJoueur& operator=(const PlateauJoueur&) = delete;
     void AjouterTuile(const TuilePlacee*);
+    int GetNbTuiles() const { return nbTuiles; }
 };
 
 
@@ -23,6 +26,8 @@ private:
 public:
     Joueur();
     ~Joueur();
+    Joueur(const Joueur&) = delete;
+    Joueur& operator=(const Joueur&) = delete;
     int CalculScore();
     int GetNbJetonNature() const { return nbJetonNature; }
     std::string GetNomJoueur() const { return nomJoueur; }

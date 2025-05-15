@@ -10,7 +10,7 @@ public:
 };
 
 
-class ControleurGeneral {
+class ControleurGeneral { // Singleton
 private:
     int nbTuiles;
     int nbCartesRegles;

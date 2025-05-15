@@ -6,7 +6,7 @@
 
 class ControleurTour {
     int nbrAction;
-    Action** listeActions; 
+    Action** listeActions;
 public:
     ControleurTour();
     ~ControleurTour();
@@ -26,6 +26,8 @@ private:
 public:
     Partie();
     Partie(int nbJoueurs);
+    Partie(const Partie&) = delete;
+    Partie& operator=(const Partie&) = delete;
     ~Partie();
     bool EstFini();
     Joueur* GetGagnant();

@@ -13,7 +13,7 @@ Pioche::Pioche() {
 
 Pioche::~Pioche() {
     for (int i = 0; i < 4; ++i) {
-        delete tuiles[i];
+        delete tuiles[i]; 
     }
     delete sacDeTuiles;
     delete sacDeJetons;
@@ -37,6 +37,3 @@ void Pioche::SelectionnerJeton() {
     int idJetonChoisis = rand() % 4;
     animalOuPas jetonChoisi = jetons[idJetonChoisis];
 }
-
-
-

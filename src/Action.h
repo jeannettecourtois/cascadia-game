@@ -5,8 +5,8 @@
 
 class Action {
 public:
-    void execute();
-    void undo();
+    void executer();
+    void annuler();
 };
 
 class ActionSelectionTuile: public Action {
@@ -15,8 +15,8 @@ private:
 public:
     ActionSelectionTuile();
     ~ActionSelectionTuile();
-    void execute();
-    void undo();
+    void executer();
+    void annuler();
 };
 
 class ActionSelectionJeton: public Action {
@@ -25,8 +25,8 @@ private:
 public:
     ActionSelectionJeton();
     ~ActionSelectionJeton();
-    void execute();
-    void undo();
+    void executer();
+    void annuler();
 };
 
 class ActionPlacerTuile: public Action {
@@ -36,8 +36,8 @@ private:
 public:
     ActionPlacerTuile(Tuile* t, Position p);
     ~ActionPlacerTuile();
-    void execute();
-    void undo();
+    void executer();
+    void annuler();
 };
 
 class ActionPlacerJeton: public Action {
@@ -47,8 +47,8 @@ private:
 public:
     ActionPlacerJeton(animalOuPas* j, TuilePlacee* c);
     ~ActionPlacerJeton();
-    void execute();
-    void undo();
+    void executer();
+    void annuler();
 };
 
 class ActionUtiliserJetonNature: public Action {
@@ -57,22 +57,22 @@ private:
 public:
     ActionUtiliserJetonNature(Action* a);
     ~ActionUtiliserJetonNature();
-    void execute();
-    void undo();
+    void executer();
+    void annuler();
 };
 
 class SelectionTuileJeton : public ActionUtiliserJetonNature {
 public:
     SelectionTuileJeton();
     ~SelectionTuileJeton();
-    void execute();
-    void undo();
+    void executer();
+    void annuler();
 };
 
 class SupressionJetonPioche : public ActionUtiliserJetonNature {
 public:
     SupressionJetonPioche();
     ~SupressionJetonPioche();
-    void execute();
-    void undo();
+    void executer();
+    void annuler();
 };
