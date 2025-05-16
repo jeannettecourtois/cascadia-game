@@ -12,8 +12,7 @@
 - [ ] Debbug de départ 	Yan
 - [ ] README Yan
 
-## Convention typage C++
-
+<details><summary>Convention typage C++</summary>
 
 ### 1. Noms de Variables
 
@@ -95,3 +94,5 @@
     my_class.hpp
     database_connection.cpp
     ```
+
+</details>
