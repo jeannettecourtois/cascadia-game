@@ -1,6 +1,7 @@
 #pragma once
 #include "partie.h"
 #include "joueur.h"
+#include "carteMarquageFaune.h"
 
 class TuileDepart {
 public:

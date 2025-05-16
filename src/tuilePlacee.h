@@ -21,7 +21,7 @@ protected:
     int rotation;
 public:
     TuilePlacee();
-    TuilePlacee(const TuilePlaceeDeplacable*);
+    //TuilePlacee(const TuilePlaceeDeplacable*); --> à revoir 
     ~TuilePlacee();
     void Deplacer(const Position){}
     void Tourner(const int){}

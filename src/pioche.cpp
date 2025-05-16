@@ -4,7 +4,7 @@
 Pioche::Pioche() {
     for (int i = 0; i < 4; ++i) {
         tuiles[i] = nullptr;
-        jetons[i] = animalOuPas;
+        jetons[i] = animalOuPas::Vide;
     }
     idTuileChoisis = -1;
     sacDeTuiles = new SacTuile();

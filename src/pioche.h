@@ -2,22 +2,6 @@
 #include "tuile.h"
 #include "controleurGeneral.h"
 
-
-class Pioche {
-private:
-    Tuile* tuiles[4];
-    animalOuPas jetons[4];
-    int idTuileChoisis;
-    SacTuile* sacDeTuiles;
-    SacJeton* sacDeJetons;
-public:
-    Pioche();
-    ~Pioche();
-    void PreparerPioche();
-    void SelectionnerTuile();
-    void SelectionnerJeton();
-};
-
 class SacTuile {
 private:
     int nbTuile;
@@ -43,4 +27,19 @@ public:
     ~SacJeton();
     animal* Piocher();
     void MettreDansLeSac(animal);
+};
+
+class Pioche {
+private:
+    Tuile* tuiles[4];
+    animalOuPas jetons[4];
+    int idTuileChoisis;
+    SacTuile* sacDeTuiles;
+    SacJeton* sacDeJetons;
+public:
+    Pioche();
+    ~Pioche();
+    void PreparerPioche();
+    void SelectionnerTuile();
+    void SelectionnerJeton();
 };

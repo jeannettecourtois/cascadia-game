@@ -3,8 +3,6 @@
 CarteMarquageFaune::CarteMarquageFaune(animal a) : animalCarte(a) {}
 CarteMarquageFaune::~CarteMarquageFaune() {}
 
-animal CarteMarquageFaune::GetAnimalCarte() { return animalCarte; }
-
 int CarteMarquageFaune::CalculPoints(PlateauJoueur&) {
     return 0; 
 }
