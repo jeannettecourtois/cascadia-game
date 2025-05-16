@@ -9,7 +9,7 @@
 - [ ] Pioche			Alexandre
 - [ ] TuilePlacee		Corentin
 - [ ] Tuile			Yan
-- [ ] Debbug de départ 	Yan
+- [x] Debbug de départ 	Yan
 - [ ] README Yan
 
 <details><summary>Convention typage C++</summary>
