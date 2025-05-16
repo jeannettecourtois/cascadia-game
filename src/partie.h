@@ -4,6 +4,8 @@
 #include "carteMarquageFaune.h"
 #include "action.h"
 
+class Pioche;
+
 class ControleurTour {
     int nbrAction;
     Action** listeActions;

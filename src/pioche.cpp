@@ -23,7 +23,7 @@ void Pioche::PreparerPioche() {
     // Préparer la pioche de tuiles et de jetons
     for (int i = 0; i < 4; ++i) {
         tuiles[i] = sacDeTuiles->Piocher();
-        jetons[i] = sacDeJetons->Piocher();
+        jetons[i] = static_cast<animalOuPas>(*(sacDeJetons->Piocher())); //Conversion animalOuPas vers animal
     }
 }
 
