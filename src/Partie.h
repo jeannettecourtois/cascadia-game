@@ -1,8 +1,8 @@
 #pragma once
-#include "Joueur.h"
-#include "Pioche.h"
-#include "CarteMarquageFaune.h"
-#include "Action.h"
+#include "joueur.h"
+#include "pioche.h"
+#include "carteMarquageFaune.h"
+#include "action.h"
 
 class ControleurTour {
     int nbrAction;

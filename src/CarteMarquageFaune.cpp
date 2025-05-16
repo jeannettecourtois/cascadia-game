@@ -1,4 +1,4 @@
-#include "CarteMarquageFaune.h"
+#include "carteMarquageFaune.h"
 
 CarteMarquageFaune::CarteMarquageFaune(animal a) : animalCarte(a) {}
 CarteMarquageFaune::~CarteMarquageFaune() {}

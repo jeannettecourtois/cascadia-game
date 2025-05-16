@@ -1,6 +1,6 @@
 #pragma once
-#include "Partie.h"
-#include "Joueur.h"
+#include "partie.h"
+#include "joueur.h"
 
 class TuileDepart {
 public:

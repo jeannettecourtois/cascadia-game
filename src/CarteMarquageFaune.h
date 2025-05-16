@@ -1,6 +1,6 @@
 #pragma once
 #include "enum.h"
-#include "Joueur.h"
+#include "joueur.h"
 
 class CarteMarquageFaune {
 private:

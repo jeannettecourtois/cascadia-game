@@ -1,4 +1,4 @@
-#include "ControleurGeneral.h"
+#include "controleurGeneral.h"
 
 TuileDepart::TuileDepart() {
     for (int i = 0; i < 3; ++i) {
