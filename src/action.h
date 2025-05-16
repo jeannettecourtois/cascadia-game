@@ -45,7 +45,7 @@ private:
     TuilePlacee* cible;
     animalOuPas jeton;
 public:
-    ActionPlacerJeton(animalOuPas* j, TuilePlacee* c);
+    ActionPlacerJeton(animalOuPas j, TuilePlacee* c);
     ~ActionPlacerJeton();
     void executer();
     void annuler();
