@@ -1,7 +1,15 @@
 # Cascadia
 
 ## Répartition
-
+Action			Jeanne
+CarteMarquageFaune	Alexandre
+ControleurGeneral	Jeanette
+Joueur			Corentin
+Partie			Jeanne
+Pioche			Alexandre
+TuilePlacee		Corentin
+tuile			Yan
+Debbug de départ 	Yan
 
 ## Convention typage C++
 
