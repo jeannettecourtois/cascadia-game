@@ -18,7 +18,7 @@ ActionPlacerTuile::~ActionPlacerTuile() {}
 void ActionPlacerTuile::executer() {}
 void ActionPlacerTuile::annuler() {}
 
-ActionPlacerJeton::ActionPlacerJeton(animalOuPas* j, TuilePlacee* c) : jeton(*j), cible(c) {}
+ActionPlacerJeton::ActionPlacerJeton(animalOuPas j, TuilePlacee* c) : jeton(j), cible(c) {}
 ActionPlacerJeton::~ActionPlacerJeton() {}
 void ActionPlacerJeton::executer() {}
 void ActionPlacerJeton::annuler() {}
