@@ -1,5 +1,5 @@
 #include <iostream>
-#include "CarteMarquageFaune.h"
+#include "carteMarquageFaune.h"
 
 int main() {
     std::cout << "Projet Cascadia prêt !" << std::endl;

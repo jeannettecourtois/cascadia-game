@@ -1,4 +1,4 @@
-#include "Pioche.h"
+#include "pioche.h"
 #include "enum.h"
 
 Pioche::Pioche() {

@@ -1,4 +1,4 @@
-#include "Partie.h"
+#include "partie.h"
 
 // Controleur Tour
 
@@ -10,7 +10,6 @@ ControleurTour::~ControleurTour() {
     }
     delete[] listeActions;
 }
-
 
 
 

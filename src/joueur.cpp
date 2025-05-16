@@ -1,4 +1,4 @@
-#include "Joueur.h"
+#include "joueur.h"
 
 Joueur :: Joueur() : idJoueur(1), nbJetonNature(0), nomJoueur("Joueur 1"), plateau(new PlateauJoueur()) {
     // Constructeur par défaut

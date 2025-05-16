@@ -1,6 +1,6 @@
 #pragma once
 #include "tuile.h"
-#include "ControleurGeneral.h"
+#include "controleurGeneral.h"
 
 
 class Pioche {
