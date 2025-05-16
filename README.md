@@ -96,3 +96,6 @@
     ```
 
 </details>
+
+## UML
+![](UML.png)
