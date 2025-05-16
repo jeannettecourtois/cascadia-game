@@ -1,6 +1,24 @@
 #include "pioche.h"
 #include "enum.h"
 
+SacTuile::SacTuile() {}
+
+SacTuile::~SacTuile() {}
+
+Tuile* SacTuile::Piocher() {return nullptr;} //à changer, juste pour compiler coder
+
+void SacTuile::MettreDansLeSac(Tuile&) {}
+
+
+SacJeton::SacJeton() {}
+
+SacJeton::~SacJeton() {}
+
+animal* SacJeton::Piocher() {return nullptr;} //à changer, juste pour compiler coder
+
+void SacJeton::MettreDansLeSac(animal) {}
+
+
 Pioche::Pioche() {
     for (int i = 0; i < 4; ++i) {
         tuiles[i] = nullptr;
