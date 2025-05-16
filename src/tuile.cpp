@@ -1,6 +1,6 @@
 #include "tuile.h"
 
-Tuile::Tuile() : nbAnimaux(0), nbHabitat(0), listeAnimaux(nullptr), listeHabitat(nullptr) {}
+Tuile::Tuile():nbAnimaux(0),nbHabitat(0),listeAnimaux(nullptr),listeHabitat(nullptr){}
 
 Tuile::~Tuile() {
     if (listeAnimaux) {
@@ -16,5 +16,8 @@ Tuile::~Tuile() {
     }
 }
 
+Keystone::Keystone() : Tuile() {}
+
+Keystone::~Keystone() {}
 
 void Keystone::AssociationJeton() const {}

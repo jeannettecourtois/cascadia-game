@@ -10,8 +10,8 @@ private:
     habitat** listeHabitat;
 public:
     Tuile();
-    ~Tuile();
-    void AssociationJeton() const {}
+    virtual ~Tuile();   // destructeur virtuel pour le polymorphisme
+    virtual void AssociationJeton() const {}   // méthode virtuelle pour être substituée
     int GetNbAnimaux() const {return nbAnimaux;}
     int GetNbHabitat() const {return nbHabitat;}
     animal** GetListeAnimaux() const {return listeAnimaux;}
@@ -20,5 +20,7 @@ public:
 
 class Keystone : public Tuile {
 public:
-    void AssociationJeton() const; //Est-ce qu'on met joueur en paramètre ?
+    Keystone();
+    ~Keystone() override; // override rend explicite la substitution
+    void AssociationJeton() const override; //Est-ce qu'on met joueur en paramètre ?
 };
