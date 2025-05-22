@@ -1,7 +1,7 @@
 #pragma once
-#include "tuilePlacee.h"
 #include <string>
-
+#include "tuilePlacee.h"
+using namespace std;
 
 class PlateauJoueur {
 private:
@@ -12,8 +12,9 @@ public:
     ~PlateauJoueur();
     PlateauJoueur(const PlateauJoueur&) = delete;
     PlateauJoueur& operator=(const PlateauJoueur&) = delete;
-    void AjouterTuile(const TuilePlacee*);
-    int GetNbTuiles() const { return nbTuiles; }
+    void ajouterTuile(const TuilePlacee*);
+    void ajouterTuileDepart(const TuileDepart* set);
+    int getNbTuiles() const { return nbTuiles; }
 };
 
 
@@ -28,7 +29,8 @@ public:
     ~Joueur();
     Joueur(const Joueur&) = delete;
     Joueur& operator=(const Joueur&) = delete;
-    int CalculScore();
-    int GetNbJetonNature() const { return nbJetonNature; }
-    std::string GetNomJoueur() const { return nomJoueur; }
+    int calculScore();
+    int getNbJetonNature() const { return nbJetonNature; }
+    string getNomJoueur() const { return nomJoueur; }
+    PlateauJoueur* getPlateau() const { return plateau; }
 };

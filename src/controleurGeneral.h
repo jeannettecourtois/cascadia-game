@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 #include "partie.h"
 #include "joueur.h"
 #include "carteMarquageFaune.h"
@@ -24,8 +25,10 @@ private:
 public:
     ControleurGeneral(const ControleurGeneral&) = delete;
     ControleurGeneral& operator=(const ControleurGeneral&) = delete;
-    static ControleurGeneral& GetInstance() {
+    static ControleurGeneral& getInstance() {
         static ControleurGeneral instance;
         return instance;
     }
+    CarteMarquageFaune* getCarteRegleAleatoire();
+    TuileDepart* getTuilesDepartAleatoires(); // retourne un tableau de 3 tuiles
 };

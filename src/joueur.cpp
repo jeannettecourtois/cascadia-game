@@ -1,4 +1,5 @@
 #include "joueur.h"
+#include "partie.h"
 
 Joueur :: Joueur() : idJoueur(1), nbJetonNature(0), nomJoueur("Joueur 1"), plateau(new PlateauJoueur()) {
     // Constructeur par défaut
@@ -22,7 +23,7 @@ PlateauJoueur :: ~PlateauJoueur() {
     }
     delete[] tuiles;
 }
-void PlateauJoueur :: AjouterTuile(const TuilePlacee* tuile) {
+void PlateauJoueur:: ajouterTuile(const TuilePlacee* tuile) {
     // Ajouter une tuile au plateau du joueur
     TuilePlacee** newTuiles = new TuilePlacee*[nbTuiles + 1]; //nouveau tableau de taille nbTuiles + 1
     for (int i = 0; i < nbTuiles; ++i) {
@@ -32,4 +33,10 @@ void PlateauJoueur :: AjouterTuile(const TuilePlacee* tuile) {
     delete[] tuiles;
     tuiles = newTuiles; //nouveau tableau avec la nouvelle tuile placée à la fin
     nbTuiles++;
+}
+
+void PlateauJoueur::ajouterTuileDepart(const TuileDepart* set) {
+    ajouterTuile(set[0], Position(0, 0));         // tuile centrale
+    ajouterTuile(set[1], Position(1, 0));         // SE de (0,0)
+    ajouterTuile(set[2], Position(0, 1));         // SW de (0,0)
 }

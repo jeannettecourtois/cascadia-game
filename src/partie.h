@@ -33,4 +33,5 @@ public:
     ~Partie();
     bool EstFini();
     Joueur* GetGagnant();
+    void InitialiserPartie();
 };

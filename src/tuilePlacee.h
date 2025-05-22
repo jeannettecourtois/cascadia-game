@@ -1,7 +1,9 @@
 #pragma once
+#include <iostream>
+#include <string>
 #include "tuile.h"
 
-class TuilePlaceeDeplacable; // déclaration anticipée pour TuilePlacee
+class TuilePlaceeDeplacable; // dÃ©claration anticipÃ©e pour TuilePlacee
 
 class Position {
 public:
@@ -12,6 +14,12 @@ public:
     ~Position() = default;
     void SetPosition(int a, int b){x=a; y=b;}
     void SetPosition(const Position& pos){x=pos.x; y=pos.y;}
+    Position getE() const  { return Position(q + 1, r); }
+    Position getSE() const { return Position(q, r + 1); }
+    Position getSW() const { return Position(q - 1, r + 1); }
+    Position getW() const  { return Position(q - 1, r); }
+    Position getNW() const { return Position(q, r - 1); }
+    Position getNE() const { return Position(q + 1, r - 1); }
 };
 
 class TuilePlacee {
