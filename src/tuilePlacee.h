@@ -14,12 +14,12 @@ public:
     ~Position() = default;
     void SetPosition(int a, int b){x=a; y=b;}
     void SetPosition(const Position& pos){x=pos.x; y=pos.y;}
-    Position getE() const  { return Position(q + 1, r); }
-    Position getSE() const { return Position(q, r + 1); }
-    Position getSW() const { return Position(q - 1, r + 1); }
-    Position getW() const  { return Position(q - 1, r); }
-    Position getNW() const { return Position(q, r - 1); }
-    Position getNE() const { return Position(q + 1, r - 1); }
+    Position getE() const  { return Position(x + 1, y); }
+    Position getSE() const { return Position(x, y + 1); }
+    Position getSW() const { return Position(x - 1, y + 1); }
+    Position getW() const  { return Position(x - 1, y); }
+    Position getNW() const { return Position(x, y - 1); }
+    Position getNE() const { return Position(x + 1, y - 1); }
 };
 
 class TuilePlacee {
@@ -38,7 +38,7 @@ public:
     animalOuPas GetJeton() const {return jeton;}
     virtual void Deplacer(const Position& p);
     virtual void Tourner(const int n);
-    void AjouterJeton(const animalOuPas a);
+    void ajouterJeton(const animalOuPas a);
 };
 
 class TuilePlaceeDeplacable : public TuilePlacee {
@@ -46,8 +46,8 @@ public:
     TuilePlaceeDeplacable() = default;
     ~TuilePlaceeDeplacable() = default;
 
-    void Deplacer(const Position& p2) override {pos.SetPosition(p2);}
-    void Tourner(int n) override {rotation = (rotation + n) % 6;}
-    Position GetPosition() const {return pos;}
-    int GetRotation() const {return rotation;}
+    void deplacer(const Position& p2) override {pos.SetPosition(p2);}
+    void tourner(int n) override {rotation = (rotation + n) % 6;}
+    Position getPosition() const {return pos;}
+    int getRotation() const {return rotation;}
 };

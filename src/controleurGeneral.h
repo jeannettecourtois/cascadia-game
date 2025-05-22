@@ -9,6 +9,7 @@ public:
     TuilePlacee* tuiles[3];
     TuileDepart();
     ~TuileDepart();
+    TuilePlacee* getTuile(int i) const { return tuiles[i]; }
 };
 
 

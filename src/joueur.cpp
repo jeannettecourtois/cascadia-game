@@ -35,8 +35,17 @@ void PlateauJoueur:: ajouterTuile(const TuilePlacee* tuile) {
     nbTuiles++;
 }
 
-void PlateauJoueur::ajouterTuileDepart(const TuileDepart* set) {
-    ajouterTuile(set[0], Position(0, 0));         // tuile centrale
-    ajouterTuile(set[1], Position(1, 0));         // SE de (0,0)
-    ajouterTuile(set[2], Position(0, 1));         // SW de (0,0)
+void PlateauJoueur::ajouterTuilesDepart(const TuileDepart* set) {
+    Position pos1(0, 0); //tuile 1 au centre (0,0)
+    Position pos2 = pos1.getSE();  // (0, 1)
+    Position pos3 = pos1.getSW(); // (-1, 1)
+
+    set->getTuile(0)->Deplacer(pos1);
+    ajouterTuile(set->getTuile(0));
+
+    set->getTuile(1)->Deplacer(pos2);
+    ajouterTuile(set->getTuile(1));
+
+    set->getTuile(2)->Deplacer(pos3);
+    ajouterTuile(set->getTuile(2));
 }

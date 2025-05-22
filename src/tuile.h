@@ -13,11 +13,11 @@ private:
 public:
     Tuile();
     virtual ~Tuile();   // destructeur virtuel pour le polymorphisme
-    virtual void AssociationJeton() const {}   // méthode virtuelle pour être substituée
-    int GetNbAnimaux() const {return nbAnimaux;}
-    int GetNbHabitat() const {return nbHabitat;}
-    animal** GetListeAnimaux() const {return listeAnimaux;}
-    habitat** GetListeHabitat() const {return listeHabitat;}
+    virtual void associationJeton() const {}   // méthode virtuelle pour être substituée
+    int getNbAnimaux() const {return nbAnimaux;}
+    int getNbHabitat() const {return nbHabitat;}
+    animal** getListeAnimaux() const {return listeAnimaux;}
+    habitat** getListeHabitat() const {return listeHabitat;}
 };
 
 class Keystone : public Tuile {
