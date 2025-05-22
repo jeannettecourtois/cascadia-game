@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "tuilePlacee.h"
+#include "controleurGeneral.h"
 using namespace std;
 
 class PlateauJoueur {

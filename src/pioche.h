@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include "tuile.h"
 #include "controleurGeneral.h"
 
@@ -10,7 +11,7 @@ public:
     SacTuile();
     ~SacTuile();
     Tuile* Piocher();
-    void MettreDansLeSac(Tuile&);
+    void mettreDansLeSac(Tuile&);
 };
 
 
@@ -26,7 +27,7 @@ public:
     SacJeton();
     ~SacJeton();
     animal* Piocher();
-    void MettreDansLeSac(animal);
+    void mettreDansLeSac(animal);
 };
 
 class Pioche {
@@ -39,7 +40,7 @@ private:
 public:
     Pioche();
     ~Pioche();
-    void PreparerPioche();
-    void SelectionnerTuile();
-    void SelectionnerJeton();
+    void preparerPioche();
+    void selectionnerTuile();
+    void selectionnerJeton();
 };

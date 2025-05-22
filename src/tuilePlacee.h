@@ -34,10 +34,10 @@ public:
     TuilePlacee(const TuilePlaceeDeplacable* t);
     ~TuilePlacee();
 
-    const Tuile* GetTuile() const {return tuile;}
-    animalOuPas GetJeton() const {return jeton;}
-    virtual void Deplacer(const Position& p);
-    virtual void Tourner(const int n);
+    const Tuile* getTuile() const {return tuile;}
+    animalOuPas getJeton() const {return jeton;}
+    virtual void deplacer(const Position& p);
+    virtual void tourner(const int n);
     void ajouterJeton(const animalOuPas a);
 };
 

@@ -1,10 +1,14 @@
 #pragma once
-#include "joueur.h"
-#include "pioche.h"
-#include "carteMarquageFaune.h"
-#include "action.h"
+
+using namespace std;
 
 class Pioche;
+class ControleurTour;
+class TuileDepart;
+class TuilePlacee;
+class Joueur;
+class CarteMarquageFaune;
+class Action;
 
 class ControleurTour {
     int nbrAction;
@@ -31,7 +35,7 @@ public:
     Partie(const Partie&) = delete;
     Partie& operator=(const Partie&) = delete;
     ~Partie();
-    bool EstFini();
-    Joueur* GetGagnant();
-    void InitialiserPartie();
+    bool estFini();
+    Joueur* getGagnant();
+    void initialiserPartie();
 };

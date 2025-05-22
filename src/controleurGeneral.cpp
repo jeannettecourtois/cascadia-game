@@ -36,3 +36,7 @@ ControleurGeneral::~ControleurGeneral() {
         delete[] tuilesDepart;
     }
 }
+
+// TuileDepart* ControleurGeneral::getTuilesDepartAleatoires() {
+//   //todo
+// }

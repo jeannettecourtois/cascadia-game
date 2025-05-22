@@ -20,4 +20,4 @@ Keystone::Keystone() : Tuile() {}
 
 Keystone::~Keystone() {}
 
-void Keystone::AssociationJeton() const {}
+void Keystone::associationJeton() const {}

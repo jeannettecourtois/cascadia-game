@@ -34,8 +34,7 @@ void PlateauJoueur:: ajouterTuile(const TuilePlacee* tuile) {
     tuiles = newTuiles; //nouveau tableau avec la nouvelle tuile placée à la fin
     nbTuiles++;
 }
-
-void PlateauJoueur::ajouterTuilesDepart(const TuileDepart* set) {
+void PlateauJoueur::ajouterTuileDepart(const TuileDepart* set) {
     Position pos1(0, 0); //tuile 1 au centre (0,0)
     Position pos2 = pos1.getSE();  // (0, 1)
     Position pos3 = pos1.getSW(); // (-1, 1)

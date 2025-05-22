@@ -24,5 +24,5 @@ class Keystone : public Tuile {
 public:
     Keystone();
     ~Keystone() override; // override rend explicite la substitution
-    void AssociationJeton() const override; //Est-ce qu'on met joueur en paramètre ?
+    void associationJeton() const override; //Est-ce qu'on met joueur en paramètre ?
 };

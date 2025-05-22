@@ -31,5 +31,5 @@ public:
         return instance;
     }
     CarteMarquageFaune* getCarteRegleAleatoire();
-    TuileDepart* getTuilesDepartAleatoires(); // retourne un tableau de 3 tuiles
+    TuileDepart* getTuilesDepartAleatoires(); // retourne un pointeur vers tableau de 3 tuiles
 };

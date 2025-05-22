@@ -4,18 +4,18 @@
 
 TuilePlacee::TuilePlacee():tuile(nullptr),jeton(animalOuPas::Vide),pos(0,0),rotation(0){}
 
-TuilePlacee::TuilePlacee(const TuilePlaceeDeplacable* t):tuile(t->GetTuile()),jeton(t->GetJeton()),pos(t->GetPosition()),rotation(t->GetRotation()){}
+TuilePlacee::TuilePlacee(const TuilePlaceeDeplacable* t):tuile(t->getTuile()),jeton(t->getJeton()),pos(t->getPosition()),rotation(t->getRotation()){}
 
 TuilePlacee::~TuilePlacee(){}
 
-void TuilePlacee::Deplacer(const Position& p) {
+void TuilePlacee::deplacer(const Position& p) {
     // to do
 }
 
-void TuilePlacee::Tourner(int n) {
+void TuilePlacee::tourner(int n) {
     // to do
 }
 
-void TuilePlacee::AjouterJeton(animalOuPas a) {
+void TuilePlacee::ajouterJeton(animalOuPas a) {
     jeton = a;
 }
