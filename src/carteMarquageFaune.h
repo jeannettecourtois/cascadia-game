@@ -1,6 +1,7 @@
 #pragma once
 #include "enum.h"
-#include "joueur.h"
+#include "controleurGeneral.h"
+class PlateauJoueur; // Déclaration anticipée
 
 class CarteMarquageFaune {
 private:
@@ -9,19 +10,19 @@ public:
     CarteMarquageFaune(animal a);
     ~CarteMarquageFaune();
     animal GetAnimalCarte() {return animalCarte;}
-    int CalculPoints(PlateauJoueur&);
+    int calculPoints(PlateauJoueur&);
 };
 
 class CarteMarquageFauneParMasque : public CarteMarquageFaune {
 public:
     CarteMarquageFauneParMasque(animal a);
     ~CarteMarquageFauneParMasque();
-    int CalculPoints(PlateauJoueur&);
+    int calculPoints(PlateauJoueur&);
 };
 
 class CarteMarquageFauneParDiversiteDeType : public CarteMarquageFaune {//Utile pour le renard
 public:
     CarteMarquageFauneParDiversiteDeType(animal a);
     ~CarteMarquageFauneParDiversiteDeType();
-    int CalculPoints(PlateauJoueur&);
+    int calculPoints(PlateauJoueur&);
 };

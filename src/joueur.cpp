@@ -7,7 +7,7 @@ Joueur :: Joueur() : idJoueur(1), nbJetonNature(0), nomJoueur("Joueur 1"), plate
 Joueur :: ~Joueur() {
     delete plateau;
 }
-int Joueur :: CalculScore() {
+int Joueur :: calculScore() {
     int score = 0;
     // Calculer le score en fonction des tuiles placées et des jetons selon les règles
     return score;
@@ -39,12 +39,12 @@ void PlateauJoueur::ajouterTuileDepart(const TuileDepart* set) {
     Position pos2 = pos1.getSE();  // (0, 1)
     Position pos3 = pos1.getSW(); // (-1, 1)
 
-    set->getTuile(0)->Deplacer(pos1);
+    set->getTuile(0)->deplacer(pos1);
     ajouterTuile(set->getTuile(0));
 
-    set->getTuile(1)->Deplacer(pos2);
+    set->getTuile(1)->deplacer(pos2);
     ajouterTuile(set->getTuile(1));
 
-    set->getTuile(2)->Deplacer(pos3);
+    set->getTuile(2)->deplacer(pos3);
     ajouterTuile(set->getTuile(2));
 }
