@@ -1,5 +1,5 @@
 #pragma once
-
+#include<vector>
 using namespace std;
 
 class Pioche;
@@ -10,14 +10,14 @@ class Joueur;
 class CarteMarquageFaune;
 class Action;
 
+
 class ControleurTour {
-    int nbrAction;
-    Action** listeActions;
+    vector<Action*> listeActions;
 public:
     ControleurTour();
     ~ControleurTour();
-    void ExecuterAction(Action* a);
-    void AnnulerDerniereAction();
+    void executerAction(Action* a);
+    void annulerDerniereAction();
 };
 
 
@@ -29,13 +29,24 @@ private:
     Pioche* pioche;
     ControleurTour* ctrlTour;
     int nbTour = 20;
+    int joueurCourant=0;
 public:
-    Partie();
-    Partie(int nbJoueurs);
+    Partie(); //partie solo
+    Partie(int nbJoueurs); //partie multi-joueurs
     Partie(const Partie&) = delete;
     Partie& operator=(const Partie&) = delete;
     ~Partie();
-    bool estFini();
-    Joueur* getGagnant();
+
+    int getNbJoueur() const {return nbJoueur;}
+    int getNbTour() const {return nbTour;}
+    Joueur* getJoueur(int i) const {return joueurs[i];}
+    CarteMarquageFaune* getCarteRegle(int i) const { return cartesRegles[i]; }
+    Pioche* getPioche() const { return pioche; }
+    int getJoueurCourant() const { return joueurCourant; }
+
+    bool estFini() const;
+    Joueur* getGagnant() const;
     void initialiserPartie();
+    void jouerTour();
+    void passerAuJoueurSuivant();
 };

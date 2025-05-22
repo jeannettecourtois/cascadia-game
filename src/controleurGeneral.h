@@ -8,6 +8,7 @@ class TuileDepart {
 public:
     TuilePlacee* tuiles[3];
     TuileDepart();
+    TuileDepart(const TuileDepart& other);
     ~TuileDepart();
     TuilePlacee* getTuile(int i) const { return tuiles[i]; }
 };

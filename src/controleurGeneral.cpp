@@ -8,6 +8,15 @@ TuileDepart::TuileDepart() {
     }
 }
 
+TuileDepart::TuileDepart(const TuileDepart& other) {
+    for (int i = 0; i < 3; ++i) {
+        if (other.tuiles[i])
+            tuiles[i] = new TuilePlacee(*other.tuiles[i]); // Copie profonde
+        else
+            tuiles[i] = nullptr;
+    }
+}
+
 TuileDepart::~TuileDepart() {
     for (int i = 0; i < 3; ++i) {
         delete tuiles[i];
