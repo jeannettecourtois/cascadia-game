@@ -1,7 +1,8 @@
 #pragma once
+//Mieux d'utiliser "Animal" que "animal"
 
 enum class animal {
-    Ours = 1,
+    Ours,
     Cerf,
     Saumon,
     Aigle,
@@ -17,7 +18,7 @@ enum class animalOuPas {
     Renard
 };
 
-enum class habitat {
+enum class Habitat {
     Montagne,
     Foret,
     Prairie,
