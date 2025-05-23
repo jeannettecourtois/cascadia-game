@@ -5,7 +5,7 @@
 - [ ] CarteMarquageFaune	Alexandre
 - [ ] ControleurGeneral	Jeanette
 - [ ] Joueur			Corentin
-- [ ] Partie			Jeanne
+- [x] Partie			Jeanne
 - [ ] Pioche			Alexandre
 - [ ] TuilePlacee		Corentin
 - [ ] Tuile			Yan
