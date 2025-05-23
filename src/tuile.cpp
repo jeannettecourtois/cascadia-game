@@ -20,4 +20,5 @@ Keystone::Keystone() : Tuile() {}
 
 Keystone::~Keystone() {}
 
+// Donne un jeton keyStone à joueur si pose animal sur bonne case keyStone
 void Keystone::associationJeton() const {}
