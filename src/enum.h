@@ -1,6 +1,7 @@
 #pragma once
+#include <initialize_list>
 //Mieux d'utiliser "Animal" que "animal"
-
+//Même chose pour "Habitat" que "habitat"
 enum class animal {
     Ours,
     Cerf,
@@ -38,3 +39,6 @@ enum class presenceAnimal {
     Aigle,
     Renard
 };
+
+
+//Quelques listes à devoirs utiliser pour
