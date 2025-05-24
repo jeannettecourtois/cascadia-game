@@ -42,3 +42,6 @@ enum class presenceAnimal {
 
 
 //Quelques listes à devoirs utiliser pour
+
+const std::initializer_list<Animal> animaux = {Animal::Aigle, Animal::Cerf, Animal::Ours, Animal::Renard, Animal::Saumon};
+const std::initializer_list<Habitat> habitats = {Habitat::Fleuve, Habitat::Foret, Habitat::Marais, Habitat::Montagne, Habitat::Prairie};
