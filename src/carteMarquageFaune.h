@@ -5,24 +5,24 @@ class PlateauJoueur; // Déclaration anticipée
 
 class CarteMarquageFaune {
 private:
-    animal animalCarte;
+    Animal animalCarte;
 public:
-    CarteMarquageFaune(animal a);
+    CarteMarquageFaune(Animal a);
     ~CarteMarquageFaune();
-    animal GetAnimalCarte() {return animalCarte;}
+    Animal GetAnimalCarte() {return animalCarte;}
     int calculPoints(PlateauJoueur&);
 };
 
 class CarteMarquageFauneParMasque : public CarteMarquageFaune {
 public:
-    CarteMarquageFauneParMasque(animal a);
+    CarteMarquageFauneParMasque(Animal a);
     ~CarteMarquageFauneParMasque();
     int calculPoints(PlateauJoueur&);
 };
 
 class CarteMarquageFauneParDiversiteDeType : public CarteMarquageFaune {//Utile pour le renard
 public:
-    CarteMarquageFauneParDiversiteDeType(animal a);
+    CarteMarquageFauneParDiversiteDeType(Animal a);
     ~CarteMarquageFauneParDiversiteDeType();
     int calculPoints(PlateauJoueur&);
 };
