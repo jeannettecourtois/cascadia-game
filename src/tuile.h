@@ -8,16 +8,16 @@ class Tuile {
 private:
     const int nbAnimaux;
     const int nbHabitat;
-    animal** listeAnimaux;
-    habitat** listeHabitat;
+    Animal** listeAnimaux;
+    Habitat** listeHabitat;
 public:
     Tuile();
     virtual ~Tuile();   // destructeur virtuel pour le polymorphisme
     virtual void associationJeton() const {}   // méthode virtuelle pour être substituée
     int getNbAnimaux() const {return nbAnimaux;}
     int getNbHabitat() const {return nbHabitat;}
-    animal** getListeAnimaux() const {return listeAnimaux;}
-    habitat** getListeHabitat() const {return listeHabitat;}
+    Animal** getListeAnimaux() const {return listeAnimaux;}
+    Habitat** getListeHabitat() const {return listeHabitat;}
 };
 
 class Keystone : public Tuile {

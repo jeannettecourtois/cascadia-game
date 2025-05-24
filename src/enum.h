@@ -1,8 +1,8 @@
 #pragma once
-#include <initialize_list>
+#include <initializer_list>
 //Mieux d'utiliser "Animal" que "animal"
 //Même chose pour "Habitat" que "habitat"
-enum class animal {
+enum class Animal {
     Ours,
     Cerf,
     Saumon,
