@@ -1,9 +1,12 @@
 #include <iostream>
 #include "carteMarquageFaune.h"
-
+#include "controleurGeneral.h"
+#include "affichable.h"
+#include "enum.h"
+#include "tuile.h"
 int main() {
 
-    unsigned int monChoix;
+    /*unsigned int monChoix;
     cout<<"Bienvenur à notre jeu Cascadia!\n";
     cout<<"Voici les choix: \n";
     cout<<"Choix 0: Démarrer le jeu.\n";
@@ -25,5 +28,11 @@ int main() {
         default: 
         cout<<"Arrêt du jeu\n";
     }
+
+    JetonFaune j(Animal::Ours);
+    j.afficher();*/
+    Tuile t1;
+    cout<<t1.getNbAnimaux();
+
     return 0;
 }

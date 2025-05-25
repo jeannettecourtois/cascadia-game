@@ -1,5 +1,6 @@
 #include "controleurGeneral.h"
-
+#include "enum.h"
+#include "affichable.h"
 using namespace std;
 
 TuileDepart::TuileDepart() {
@@ -23,9 +24,27 @@ TuileDepart::~TuileDepart() {
     }
 }
 
+ControleurGeneral::ControleurGeneral() : nbTuilesHabitat(85), nbJetonFaune(100), nbJetonsNature(25), nbCartesMarquageFaune(21){
+    //construction des jetons Faune
+    //20 Ours 
+    for(unsigned int i=0; i<20; ++i){ tabJetons[i] = new JetonFaune(Animal::Ours);}
+    //20 Cerfs
+    for(unsigned int i=0; i<20; ++i){ tabJetons[i] = new JetonFaune(Animal::Cerf);}
+    //20 Saumons
+    for(unsigned int i=0; i<20; ++i){ tabJetons[i] = new JetonFaune(Animal::Saumon);}
+    //20 Aigles
+    for(unsigned int i=0; i<20; ++i){ tabJetons[i] = new JetonFaune(Animal::Aigle);}
+    //20 Renards 
+    for(unsigned int i=0; i<20; ++i){ tabJetons[i] = new JetonFaune(Animal::Renard);}
+
+    //construction des Tuiles 
+    for(unsigned int i = 0; i <85; ++i){ tabTuiles[i] = new Tuile();}
+
+}
 
 
-ControleurGeneral::ControleurGeneral() : nbTuiles(0), nbCartesRegles(0), nbTuilesDepart(0),
+
+/*ControleurGeneral::ControleurGeneral() : nbTuiles(0), nbCartesRegles(0), nbTuilesDepart(0),
       tuiles(nullptr), cartesRegles(nullptr), tuilesDepart(nullptr) {
     srand(std::time(nullptr));
 }
@@ -69,4 +88,4 @@ TuileDepart* ControleurGeneral::getTuilesDepartAleatoires() {
         set->tuiles[i] = new TuilePlacee(*tuilesDepart[index]->tuiles[i]);
     }
     return set; // retourne un tableau de 3 tuiles
-}
+}*/

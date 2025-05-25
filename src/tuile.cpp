@@ -1,22 +1,25 @@
 #include "tuile.h"
+#include <random>
 
-Tuile::Tuile():nbAnimaux(0),nbHabitat(0),listeAnimaux(nullptr),listeHabitat(nullptr){}
+
+
+
+
 
 Tuile::~Tuile() {
-    if (listeAnimaux) {
-        for (int i = 0; i < nbAnimaux; ++i)
-            delete listeAnimaux[i];
-        delete[] listeAnimaux;
+    for(unsigned int i = 0; i<nbAnimaux; ++i){
+        delete listeAnimaux[i];
     }
-
-    if (listeHabitat) {
-        for (int i = 0; i < nbHabitat; ++i)
-            delete listeHabitat[i];
-        delete[] listeHabitat;
+    delete[] listeAnimaux;
+    for(unsigned int i = 0; i<nbHabitat; ++i){
+        delete listeHabitat[i];
     }
+    delete[] listeHabitat;
 }
 
-/*Keystone::Keystone() : Tuile() {}
+
+/*
+Keystone::Keystone() : Tuile() {}
 
 Keystone::~Keystone() {}
 

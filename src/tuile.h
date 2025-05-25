@@ -2,23 +2,52 @@
 #include <iostream>
 #include <string>
 #include "enum.h"
+#include "affichable.h"
+#include <random>
+
 
 
 class Tuile {
 private:
-    const int nbAnimaux;
-    const int nbHabitat;
+    unsigned int nbAnimaux;
+    unsigned int nbHabitat;
     Animal** listeAnimaux;
     Habitat** listeHabitat;
+
 public:
-    Tuile();
-    virtual ~Tuile();   // destructeur virtuel pour le polymorphisme
-    virtual void associationJeton() const {}   // méthode virtuelle pour être substituée
-    int getNbAnimaux() const {return nbAnimaux;}
-    int getNbHabitat() const {return nbHabitat;}
-    Animal** getListeAnimaux() const {return listeAnimaux;}
-    Habitat** getListeHabitat() const {return listeHabitat;}
+    Tuile() {
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_int_distribution<> dist3(1, 3);
+        std::uniform_int_distribution<> dist5(0, 4);
+
+        nbHabitat = dist3(gen);
+        nbAnimaux = dist3(gen);
+
+        listeAnimaux = new Animal*[nbAnimaux];
+        listeHabitat = new Habitat*[nbHabitat];
+
+        for (unsigned int i = 0; i < nbAnimaux; ++i) {
+            unsigned int unAnimal = dist5(gen);
+            listeAnimaux[i] = new Animal(*(std::next(animaux.begin(), unAnimal)));
+        }
+
+        for (unsigned int i = 0; i < nbHabitat; ++i) {
+            unsigned int unHabitat = dist5(gen);
+            listeHabitat[i] = new Habitat(*(std::next(habitats.begin(), unHabitat)));
+        }
+    }
+
+    ~Tuile();
+
+
+    int getNbHabitat() const { return nbHabitat; }
+    int getNbAnimaux() const { return nbAnimaux; }
 };
+
+
+
+
 
 /*class Keystone : public Tuile {
 public:

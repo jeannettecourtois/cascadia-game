@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "tuile.h"
+#include "affichable.h"
 
 class TuilePlaceeDeplacable; // déclaration anticipée pour TuilePlacee
 
