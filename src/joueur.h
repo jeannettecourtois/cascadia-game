@@ -16,6 +16,7 @@ public:
     void ajouterTuile(const TuilePlacee*);
     void ajouterTuileDepart(const TuileDepart* set);
     int getNbTuiles() const { return nbTuiles; }
+    void afficherPlateau() const;
 };
 
 

@@ -48,3 +48,22 @@ void PlateauJoueur::ajouterTuileDepart(const TuileDepart* set) {
     set->getTuile(2)->deplacer(pos3);
     ajouterTuile(set->getTuile(2));
 }
+
+void PlateauJoueur::afficherPlateau() const {
+    /*Affichage du plateau du joueur en vrac pour le moment,
+    * la rotation des tuiles n'est pas prise en compte/!\
+    * faudra ajouter le design d'Alexandre pour que les tuiles soient correctement affichées*/
+
+    for (int i = 0; i < nbTuiles; ++i) {
+        const TuilePlacee* tuile = tuiles[i];
+        if (tuile) {
+            const Position& pos = tuile->getPosition();  // Getter ajouté dans tuilePlacee.h
+            const Tuile* t = tuile->getTuile();
+            animalOuPas animal = tuile->getJeton();
+
+            std::cout << "Tuile " << i + 1 << " : ";
+            std::cout << "Position (" << pos.x << ", " << pos.y << "), ";
+            std::cout << "Animal: " << animal << std::endl; // Surchargé dans enum.h
+        }
+    }
+}

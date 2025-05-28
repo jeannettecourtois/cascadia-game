@@ -40,6 +40,9 @@ public:
     virtual void deplacer(const Position& p);
     virtual void tourner(const int n);
     void ajouterJeton(const animalOuPas a);
+
+    // Pour pouvoir avoir la position de la tuile, notamment pr l'affichage
+    Position getPosition() const { return pos; }
 };
 
 class TuilePlaceeDeplacable : public TuilePlacee {
