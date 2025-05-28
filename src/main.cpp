@@ -4,35 +4,77 @@
 #include "affichable.h"
 #include "enum.h"
 #include "tuile.h"
-int main() {
 
-    /*unsigned int monChoix;
-    cout<<"Bienvenur à notre jeu Cascadia!\n";
-    cout<<"Voici les choix: \n";
-    cout<<"Choix 0: Démarrer le jeu.\n";
-    cout<<"Choix 1: Arrêter le jeu.\n";
-    cout<<"Quel est votre choix ?\n";
-    cout<<"Voitre choix: \n";
-    cin>>monChoix;
-    switch(monChoix){
-        case 0: 
-        cout<<"Le jeu va démarrer!\n";
-        int nbJoueurs;
-        cout<<"Vous êtes combien de joueurs?\n";
-        cin>>nbJoueurs;
-        break;
-        case 1: 
-        cout<<"Arrêt du jeu\n";
-        cout<<"Voici votre score: \n";
-        break;
-        default: 
-        cout<<"Arrêt du jeu\n";
+#include <string>
+#include <exception>
+#include "fileHandler.h"
+
+using namespace std;
+
+static void createNewGame() {
+    cout << "Création d'une nouvelle partie" << endl;
+    int nbHumanPlayers = askNumberOfPlayers();
+    cout << "Nombre de joueurs sélectionné : " << nbHumanPlayers << endl;
+    try {
+        /*
+        LANCER JEU
+        //ControleurGeneral::
+        */
+        cout << "LANCER JEU" << endl; // temporaire
+    }
+    catch (const exception& e) {cerr << "Erreur lors de la création de la partie : " << e.what() << endl;}
+    catch (...) {cerr << "Erreur inconnue lors de la création de la partie." << endl;}
+}
+
+int main() {
+    cout << "Bienvenue dans Cascadia - Version Console" << endl;
+    try {
+        // permet de déporter dans fonction
+        if (askLoadGame()) {
+            // pour l'instant permet juste d'éviter une variable globale
+            string filename = askFilename();
+            try {                
+                FileHandler handler;
+                if (handler.loadGame(false, filename)) {
+                    cout << "Partie chargée avec succès !" << endl;                    
+                    // ON LANCE LA PARTIE
+                    //ControleurGeneral::getInstance().startConsole();
+
+                    // ON SAUVEGARDE LA PARTIE
+                    cout << "Voulez-vous sauvegarder la partie ? (y/n) : ";
+                    string saveChoice; cin >> saveChoice;
+                    if (saveChoice == "y" || saveChoice == "Y") {
+                        string saveFile = askFilename();
+                        if (handler.saveGame(false, saveFile)) {
+                            cout << "Partie sauvegardée avec succès dans " << saveFile << endl;
+                        } else {
+                            cerr << "Erreur lors de la sauvegarde." << endl;
+                        }
+                    }
+                    // ON LIBERE EVENTUELLEMENT LA PARTIE
+                    //ControleurGeneral::freeInstance();
+                } else {cerr << "Impossible de charger la partie." << endl;}
+
+                // On indique ce qui a été chargé
+                cout << "Chargement et lancement de la partie depuis : " << filename << endl;
+            }
+            catch (const exception& e) {cerr << "Exception lors du chargement de la partie : " << e.what() << endl;}
+            catch (...) {cerr << "Erreur inconnue lors du chargement de la partie." << endl;}
+        }
+        // SINON ON CREER UNE NOUVELLE PARTIE
+        else {createNewGame();}
+    }
+    // On récupère ici toutes les éventuelles erreurs pour une sortie "propre" du programme
+    catch (const exception& e) {
+        cerr << "Erreur fatale : " << e.what() << endl;
+        return 1;
+    }
+    catch (...) {
+        cerr << "Erreur fatale inconnue." << endl;
+        return 1;
     }
 
-    JetonFaune j(Animal::Ours);
-    j.afficher();*/
-    Tuile t1;
-    cout<<t1.getNbAnimaux();
-
+    // AU REVOIR
+    cout << "Merci d'avoir joué !" << endl;
     return 0;
 }
