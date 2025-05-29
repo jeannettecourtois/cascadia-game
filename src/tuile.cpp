@@ -18,6 +18,16 @@ Tuile::~Tuile() {
 }
 
 
+
+bool contientAnimal(const std::string& animal) {
+    for (unsigned int i = 0; i < nbAnimaux; ++i) {
+        if (listeAnimaux[i] == animal) {
+            return true;
+        }
+    }
+    return false;
+}
+
 /*
 Keystone::Keystone() : Tuile() {}
 

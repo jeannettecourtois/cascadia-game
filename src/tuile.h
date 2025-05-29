@@ -40,9 +40,22 @@ public:
 
     ~Tuile();
 
-
     int getNbHabitat() const { return nbHabitat; }
     int getNbAnimaux() const { return nbAnimaux; }
+    void afficherTuile(std::ostream& f = std::cout) const {
+        f << "Tuile avec " << nbAnimaux << " animaux et " << nbHabitat << " habitats.\n";
+        f << "Animaux : ";
+        for (unsigned int i = 0; i < nbAnimaux; ++i) {
+            f << listeAnimaux[i] << " ";
+        }
+        f << "\nHabitats : ";
+        for (unsigned int i = 0; i < nbHabitat; ++i) {
+            f << listeHabitat[i] << " ";
+        }
+        f << std::endl;
+    }
+
+    bool contientAnimal(const std::string& animal) const;
 };
 
 

@@ -15,7 +15,7 @@ ControleurTour::~ControleurTour() {
     listeActions.clear();
 }
 
-void ControleurTour::executerAction(Action* a) {
+void ControleurTour::executerAction(Action* a)
     a->executer();
     listeActions.push_back(a);
 }
@@ -121,7 +121,128 @@ void Partie::initialiserPartie() {
 }
 
 void Partie::jouerTour() {
-    cout << "Tour du joueur " << joueurCourant + 1 << endl;
+    if (estFini()) {
+        cout << "La partie est terminée." << endl;
+        return;
+    }
+
+    ControleurTour* controleur = this->ctrlTour;
+    if (!ctrlTour) {
+        cerr << "Erreur : controleur de tour non initialisé !" << endl;
+        return;
+    }
+    if (joueurCourant < 0 || joueurCourant >= nbJoueur) {
+        cerr << "Erreur : joueur courant invalide !" << endl;
+        return;
+    }
+    Joueur* joueur = joueurs[joueurCourant];
+    cout << "Tour du joueur " << joueur + 1 << endl;
+    bool actionFinie = false;
+    Tuile* tuileSelectionnee = nullptr;
+    string animalJetonSelectionne = "";
+    bool tuilePlacee = false;
+    bool jetonPlace = false;
+
+    while (!actionFinie) {
+        cout << "Que voulez-vous faire ?" << endl;
+        cout << "1. Sélectionner une tuile de la pioche" << endl;
+        cout << "2. Placer une tuile sur votre plateau" << endl;
+        cout << "3. Placer un jeton faune" << endl;
+        cout << "4. Annuler dernière action" << endl;
+        cout << "5. Terminer mon tour" << endl;
+
+        int choix;
+        cin >> choix;
+
+        switch (choix) {
+            case 1: { // Sélectionner une tuile de la pioche
+                int indiceTuile;
+                pioche->afficherTuilesDisponibles(); // Affiche les tuiles disponibles dans la pioche
+                cout << "Quelle tuile souhaitez-vous prendre (indice 0-3) ? ";
+                cin >> indiceTuile;
+                if (indiceTuile < 0 || indiceTuile > 3 || !pioche->getTuile(indiceTuile)) {
+                    cout << "Indice invalide." << endl;
+                    break;
+                }
+                tuileSelectionnee = pioche->getTuile(indiceTuile);
+                animalJetonSelectionne = pioche->getJeton(indiceTuile); // Récupère le jeton associé à la tuile sélectionnée
+                cout << "Tuile sélectionnée : ";
+                tuileSelectionnee->afficherTuile();
+                cout << "Jeton sélectionné : " << animalJetonSelectionne << endl;
+
+                Action* action = new ActionSelectionTuile();
+                controleur->executerAction(action);
+                break;
+            }
+            case 2: { // Placer une tuile sur le plateau
+                if (!tuileSelectionnee) {
+                    cout << "Aucune tuile sélectionnée. Veuillez d'abord sélectionner une tuile." << endl;
+                    break;
+                }
+                int x, y;
+                cout << "Où souhaitez-vous placer la tuile ? (x,y) : ";
+                cout << " x : ";
+                cin >> x;
+                cout << " y : ";
+                cin >> y;
+                Position pos(x, y);
+                Action* action = new ActionPlacerTuile(tuileSelectionnee, pos); // recupère la tuile sélectionnée dans case 1
+                controleur->executerAction(action);
+                tuilePlacee = true;
+                break;
+            }
+            case 3: { // Placer un jeton faune
+                if (animalJetonSelectionne.empty()){
+                    cout << "Aucun jeton faune sélectionné. Veuillez d'abord sélectionner un jeton." << endl;
+                    break;
+                }
+                int x,y;
+                cout << "Sur quelle tuile souhaitez-vous placer le jeton faune ? (x,y) : " << animalJetonSelectionne << endl;
+                cout << " x : ";
+                cin >> x;
+                cout << " y : ";
+                cin >> y;
+
+                Position pos(x, y);
+                TuilePlacee* tuilePlacee = joueur->getPlateau()->getTuilePlacee(pos); // Récupère la tuile placée à la position donnée
+                if (!tuilePlacee) {
+                    cout << "Aucune tuile placée à cette position. Veuillez sélectionner un tuile déjà placée." << endl;
+                    break;
+                }
+                
+                Action* action = new ActionPlacerJeton(animalJetonSelectionne, tuilePlacee); //recupérer l'animal sélectionné dans la pioche et la tuile placée correspondante à la position
+                controleur->executerAction(action);
+                jetonPlace = true;
+                break;
+            }
+            case 4: { // Annuler la dernière action
+                controleur->annulerDerniereAction();
+                break;
+            }
+            case 5: { // Terminer le tour
+                if (tuilePlacee && jetonPlace) {
+                    cout << "Tour terminé avec succès." << endl;
+                } else if (!tuilePlacee) {
+                    cout << "Vous devez placer une tuile avant de terminer votre tour." << endl;
+                    continue; // Recommencer le tour si la tuile n'est pas placée
+                } else if (!jetonPlace) {
+                    cout << "Vous devez placer un jeton faune avant de terminer votre tour." << endl;
+                    continue; // Recommencer le tour si le jeton n'est pas placé
+                }
+                actionFinie = true;
+                break;
+            }
+            default:
+                cout << "Choix invalide." << endl;
+        }
+    }
+
+    passerAuJoueurSuivant();
+    nbTour--;
+
+
+
+
     // Exemple : appeler le controleur de tour pour jouer une action
     // ctrlTour->executerAction(...); // à adapter selon ton système d’action
 

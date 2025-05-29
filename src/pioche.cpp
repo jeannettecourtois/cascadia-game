@@ -55,3 +55,14 @@ void Pioche::selectionnerJeton() {
     int idJetonChoisis = rand() % 4;
     animalOuPas jetonChoisi = jetons[idJetonChoisis];
 }
+
+void Pioche::afficherTuilesDisponibles() const {
+    std::cout << "Tuiles disponibles dans la pioche :\n";
+    for (int i = 0; i < 4; ++i) {
+        if (tuiles[i]) {
+            std::cout << "Tuile " << i << ": " << tuiles[i]->afficherTuile() << "\n";
+        } else {
+            std::cout << "Tuile " << i << ": Vide\n";
+        }
+    }
+}
