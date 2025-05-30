@@ -1,7 +1,7 @@
 #include "carteMarquageFaune.h"
 #include "joueur.h"
 
-CarteMarquageFaune::CarteMarquageFaune(Animal a) : animalCarte(a) {}
+CarteMarquageFaune::CarteMarquageFaune(const Animal& a) : animalCarte(a) {}
 CarteMarquageFaune::~CarteMarquageFaune() {}
 
 int CarteMarquageFaune::calculPoints(PlateauJoueur&) {
@@ -9,7 +9,7 @@ int CarteMarquageFaune::calculPoints(PlateauJoueur&) {
 }
 
 
-CarteMarquageFauneParMasque::CarteMarquageFauneParMasque(Animal a) : CarteMarquageFaune(a) {}
+CarteMarquageFauneParMasque::CarteMarquageFauneParMasque(const Animal& a):CarteMarquageFaune(a) {}
 CarteMarquageFauneParMasque::~CarteMarquageFauneParMasque() {}
 
 int CarteMarquageFauneParMasque::calculPoints(PlateauJoueur&) {
@@ -17,7 +17,7 @@ int CarteMarquageFauneParMasque::calculPoints(PlateauJoueur&) {
 }
 
 
-CarteMarquageFauneParDiversiteDeType::CarteMarquageFauneParDiversiteDeType(Animal a) : CarteMarquageFaune(a) {}
+CarteMarquageFauneParDiversiteDeType::CarteMarquageFauneParDiversiteDeType(const Animal& a) : CarteMarquageFaune(a) {}
 CarteMarquageFauneParDiversiteDeType::~CarteMarquageFauneParDiversiteDeType() {}
 
 int CarteMarquageFauneParDiversiteDeType::calculPoints(PlateauJoueur&) {

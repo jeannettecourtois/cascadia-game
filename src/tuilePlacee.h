@@ -21,6 +21,10 @@ public:
     Position getW() const  { return Position(x - 1, y); }
     Position getNW() const { return Position(x, y - 1); }
     Position getNE() const { return Position(x + 1, y - 1); }
+
+    bool operator==(const Position& other) const {
+        return x == other.x && y == other.y;
+    }
 };
 
 class TuilePlacee {

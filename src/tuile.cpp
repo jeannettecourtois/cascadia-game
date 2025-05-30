@@ -12,7 +12,7 @@ Tuile::~Tuile() {
     delete[] listeHabitat;
 }
 
-bool contientAnimal(const std::string& animal) {
+bool Tuile::contientAnimal(const std::string& animal) const {
     for (unsigned int i = 0; i < nbAnimaux; ++i) {
         if (listeAnimaux[i] == animal) {
             return true;

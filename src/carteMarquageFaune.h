@@ -8,7 +8,7 @@ class CarteMarquageFaune : public affichable{
 private:
     Animal animalCarte;
 public:
-    CarteMarquageFaune(Animal a) : animalCarte(a){};
+    CarteMarquageFaune(const Animal& a);
     ~CarteMarquageFaune();
     Animal GetAnimalCarte() {return animalCarte;}
     void afficher(std::ostream& f=std::cout ) const override{
@@ -40,14 +40,14 @@ public:
 
 class CarteMarquageFauneParMasque : public CarteMarquageFaune {
 public:
-    CarteMarquageFauneParMasque(Animal a);
+    CarteMarquageFauneParMasque(const Animal& a);
     ~CarteMarquageFauneParMasque();
     int calculPoints(PlateauJoueur&);
 };
 
 class CarteMarquageFauneParDiversiteDeType : public CarteMarquageFaune {//Utile pour le renard
 public:
-    CarteMarquageFauneParDiversiteDeType(Animal a);
+    CarteMarquageFauneParDiversiteDeType(const Animal& a);
     ~CarteMarquageFauneParDiversiteDeType();
     int calculPoints(PlateauJoueur&);
 };
