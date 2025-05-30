@@ -8,6 +8,8 @@ class PlateauJoueur {
 private:
     int nbTuiles;
     TuilePlacee** tuiles;
+    char prochainId = 'A'; // ID de la prochaine tuile placée, commence à 'A'
+
 public:
     PlateauJoueur();
     ~PlateauJoueur();

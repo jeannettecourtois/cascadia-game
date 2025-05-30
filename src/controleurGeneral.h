@@ -33,6 +33,8 @@ public:
             case Animal::Renard: f <<"L'animal s'agit d'un renard.\n"; break;
         }
     }
+
+
 };
 
 class jetonNature : public affichable{
@@ -68,6 +70,7 @@ public:
     Tuile* getTuile() { return tabTuiles[distTuiles(gen)]; }
     JetonFaune* getJetonFaune() { return tabJetons[distJetons(gen)]; }
     CarteMarquageFaune* getCarteMarquageFaune() { return tabCartesMarquage[distCartes(gen)]; }
+    //CarteMarquageFaune* ControleurGeneral::getCarteRegleAleatoire()
 };
 
 // Env Test

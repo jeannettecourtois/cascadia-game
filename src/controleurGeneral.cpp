@@ -65,6 +65,27 @@ ControleurGeneral::~ControleurGeneral() {
     }
 }
 
+/*
+CarteMarquageFaune* ControleurGeneral::getCarteRegleAleatoire() {
+    if (nbCartesMarquageFaune == 0 || nbCartesMarquageFaune == nullptr) {
+        throw runtime_error("Aucune carte règle disponible.");
+    }
+    int index = rand() % nbCartesMarquageFaune; // Choisir un index aléatoire parmis les cartes
+    return tabCartesMarquage[index];
+}
+
+TuileDepart* ControleurGeneral::getTuilesDepartAleatoires() {
+    if (nbTuilesHabitat == 0 || tabTuiles == nullptr) {
+        throw std::runtime_error("Aucune tuile de départ disponible.");
+    }
+    TuileDepart* set = new TuileDepart();
+    for (int i = 0; i < 3; ++i) {
+        int index = rand() % nbTuilesHabitat;
+        set->tuiles[i] = new TuilePlacee(tabTuiles[index]);
+    }
+    return set; // retourne un tableau de 3 tuiles
+}*/
+
 
 // Env Test
 namespace singleton {
