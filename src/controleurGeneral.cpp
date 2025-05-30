@@ -41,12 +41,11 @@ ControleurGeneral::ControleurGeneral(): nbTuilesHabitat(85), nbJetonFaune(100), 
     for(unsigned int i = 0; i <85; ++i){ tabTuiles[i] = new Tuile();}
 
     //constructeur de Cartes de Marquage Faune 
-    for(unsigned int i = 0; i<4; ++i){tabCartesMarquage[i] = new CarteMarquageFaune(Animal::Aigle);}
-    for(unsigned int i = 4; i<8; ++i){tabCartesMarquage[i] = new CarteMarquageFaune(Animal::Cerf);}
-    for(unsigned int i = 8; i<12; ++i){tabCartesMarquage[i] = new CarteMarquageFaune(Animal::Ours);}
-    for(unsigned int i = 12; i<16; ++i){tabCartesMarquage[i] = new CarteMarquageFaune(Animal::Renard);}
-    for(unsigned int i = 16; i<20; ++i){tabCartesMarquage[i] = new CarteMarquageFaune(Animal::Saumon);}
-    //Il manque la 21ème carte, qui est la carte famille
+    for(unsigned int i = 0; i<3; ++i){tabCartesMarquage[i] = new CarteMarquageFaune(Animal::Aigle);}
+    for(unsigned int i = 3; i<6; ++i){tabCartesMarquage[i] = new CarteMarquageFaune(Animal::Cerf);}
+    for(unsigned int i = 6; i<9; ++i){tabCartesMarquage[i] = new CarteMarquageFaune(Animal::Ours);}
+    for(unsigned int i = 9; i<12; ++i){tabCartesMarquage[i] = new CarteMarquageFaune(Animal::Renard);}
+    for(unsigned int i = 12; i<15; ++i){tabCartesMarquage[i] = new CarteMarquageFaune(Animal::Saumon);}
 
 }
 
