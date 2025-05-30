@@ -29,63 +29,40 @@ ControleurGeneral::ControleurGeneral() : nbTuilesHabitat(85), nbJetonFaune(100),
     //20 Ours 
     for(unsigned int i=0; i<20; ++i){ tabJetons[i] = new JetonFaune(Animal::Ours);}
     //20 Cerfs
-    for(unsigned int i=0; i<20; ++i){ tabJetons[i] = new JetonFaune(Animal::Cerf);}
+    for(unsigned int i=20; i<40; ++i){ tabJetons[i] = new JetonFaune(Animal::Cerf);}
     //20 Saumons
-    for(unsigned int i=0; i<20; ++i){ tabJetons[i] = new JetonFaune(Animal::Saumon);}
+    for(unsigned int i=40; i<60; ++i){ tabJetons[i] = new JetonFaune(Animal::Saumon);}
     //20 Aigles
-    for(unsigned int i=0; i<20; ++i){ tabJetons[i] = new JetonFaune(Animal::Aigle);}
+    for(unsigned int i=60; i<80; ++i){ tabJetons[i] = new JetonFaune(Animal::Aigle);}
     //20 Renards 
-    for(unsigned int i=0; i<20; ++i){ tabJetons[i] = new JetonFaune(Animal::Renard);}
+    for(unsigned int i=80; i<100; ++i){ tabJetons[i] = new JetonFaune(Animal::Renard);}
 
     //construction des Tuiles 
     for(unsigned int i = 0; i <85; ++i){ tabTuiles[i] = new Tuile();}
 
+    //constructeur de Cartes de Marquage Faune 
+    for(unsigned int i = 0; i<4; ++i){tabCartesMarquage[i] = new CarteMarquageFaune(Animal::Aigle);}
+    for(unsigned int i = 4; i<8; ++i){tabCartesMarquage[i] = new CarteMarquageFaune(Animal::Cerf);}
+    for(unsigned int i = 8; i<12; ++i){tabCartesMarquage[i] = new CarteMarquageFaune(Animal::Ours);}
+    for(unsigned int i = 12; i<16; ++i){tabCartesMarquage[i] = new CarteMarquageFaune(Animal::Renard);}
+    for(unsigned int i = 16; i<20; ++i){tabCartesMarquage[i] = new CarteMarquageFaune(Animal::Saumon);}
+    //Il manque la 21ème carte, qui est la carte famille
+
 }
 
 
-
-/*ControleurGeneral::ControleurGeneral() : nbTuiles(0), nbCartesRegles(0), nbTuilesDepart(0),
-      tuiles(nullptr), cartesRegles(nullptr), tuilesDepart(nullptr) {
-    srand(std::time(nullptr));
-}
 
 ControleurGeneral::~ControleurGeneral() {
-    if (tuiles) {
-        for (int i = 0; i < nbTuiles; ++i)
-            delete tuiles[i];
-        delete[] tuiles;
+    for(unsigned int i = 0; i<100; ++i){
+        delete tabJetons[i];
     }
 
-    if (cartesRegles) {
-        for (int i = 0; i < nbCartesRegles; ++i)
-            delete cartesRegles[i];
-        delete[] cartesRegles;
+    for(unsigned int i = 0; i<85; ++i){
+        delete tabTuiles[i];
     }
 
-    if (tuilesDepart) {
-        for (int i = 0; i < nbTuilesDepart; ++i)
-            delete tuilesDepart[i];
-        delete[] tuilesDepart;
+    for(unsigned int i = 0; i<20; ++i){
+        delete tabCartesMarquage[i];
     }
 }
 
-
-CarteMarquageFaune* ControleurGeneral::getCarteRegleAleatoire() {
-    if (nbCartesRegles == 0 || cartesRegles == nullptr) {
-        throw runtime_error("Aucune carte règle disponible.");
-    }
-    int index = rand() % nbCartesRegles; // Choisir un index aléatoire parmis les cartes
-    return cartesRegles[index];
-}
-
-TuileDepart* ControleurGeneral::getTuilesDepartAleatoires() {
-    if (nbTuilesDepart == 0 || tuilesDepart == nullptr) {
-        throw std::runtime_error("Aucune tuile de départ disponible.");
-    }
-    TuileDepart* set = new TuileDepart();
-    for (int i = 0; i < 3; ++i) {
-        int index = rand() % nbTuilesDepart;
-        set->tuiles[i] = new TuilePlacee(*tuilesDepart[index]->tuiles[i]);
-    }
-    return set; // retourne un tableau de 3 tuiles
-}*/

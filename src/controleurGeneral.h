@@ -59,31 +59,13 @@ class ControleurGeneral: public affichable{
     int nbCartesMarquageFaune; 
     JetonFaune* tabJetons[100]; 
     Tuile* tabTuiles[85]; 
+    CarteMarquageFaune* tabCartesMarquage[21];
     public: 
     ControleurGeneral();
     ~ControleurGeneral();
+    ControleurGeneral(const ControleurGeneral&) = delete;
     void afficher(std::ostream& f=std::cout ) const{
         f << "Le jeu peut commencer. \n";
     }
 };
 
-/*class ControleurGeneral { // Singleton
-private:
-    int nbTuiles;
-    int nbCartesRegles;
-    int nbTuilesDepart;
-    Tuile** tuiles;
-    CarteMarquageFaune** cartesRegles;
-    TuileDepart** tuilesDepart;
-    ControleurGeneral();
-    ~ControleurGeneral();
-public:
-    ControleurGeneral(const ControleurGeneral&) = delete;
-    ControleurGeneral& operator=(const ControleurGeneral&) = delete;
-    static ControleurGeneral& getInstance() {
-        static ControleurGeneral instance;
-        return instance;
-    }
-    CarteMarquageFaune* getCarteRegleAleatoire();
-    TuileDepart* getTuilesDepartAleatoires(); // retourne un pointeur vers tableau de 3 tuiles
-};*/

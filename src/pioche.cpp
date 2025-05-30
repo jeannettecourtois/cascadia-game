@@ -14,9 +14,9 @@ SacJeton::SacJeton() {}
 
 SacJeton::~SacJeton() {}
 
-animal* SacJeton::Piocher() {return nullptr;} //à changer, juste pour compiler coder
+Animal* SacJeton::Piocher() {return nullptr;} //à changer, juste pour compiler coder
 
-void SacJeton::mettreDansLeSac(animal) {}
+void SacJeton::mettreDansLeSac(Animal) {}
 
 
 Pioche::Pioche() {
