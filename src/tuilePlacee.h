@@ -41,7 +41,6 @@ public:
     virtual void tourner(const int n);
     void ajouterJeton(const animalOuPas a);
     Position getPosition() const { return pos; }
-
 };
 
 

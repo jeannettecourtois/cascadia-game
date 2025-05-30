@@ -4,7 +4,7 @@ using namespace std;
 
 bool FileHandler::loadGame(bool debug, const string& filename) { return true; }
 bool FileHandler::saveGame(bool debug, const string& filename) { return true; }
-static bool saveToFile(const string filename) {
+bool FileHandler::saveToFile(const string& filename) {
     ofstream fichier(filename, ios::out); // Ouvre le fichier en écriture
     if (!fichier.is_open()) {
         cerr << "[Erreur] Impossible d'ouvrir le fichier '" << filename << "' pour l'écriture.\n";
@@ -31,7 +31,7 @@ static bool saveToFile(const string filename) {
     }
 }
 
-static bool loadFromFile(const string filename) {
+bool FileHandler::loadFromFile(const string& filename) {
     ifstream fichier(filename, ios::in); // Ouvre le fichier en lecture
     if (!fichier.is_open()) {
         cerr << "[Erreur] Impossible d'ouvrir le fichier '" << filename << "' pour la lecture.\n";

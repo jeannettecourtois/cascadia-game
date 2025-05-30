@@ -13,8 +13,8 @@ class FileHandler {
 public:
     bool loadGame(bool debug, const string& filename = "save.txt");
     bool saveGame(bool debug, const string& filename = "save.txt");
-    static bool saveToFile(const string filename = "save.txt");
-    static bool loadFromFile(const string filename = "save.txt");
+    bool saveToFile(const string& filename = "save.txt");
+    bool loadFromFile(const string& filename = "save.txt");
 };
 
 static string askFilename() {
