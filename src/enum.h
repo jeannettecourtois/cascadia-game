@@ -1,5 +1,6 @@
 #pragma once
 #include <initializer_list>
+#include <iostream>
 //Mieux d'utiliser "Animal" que "animal"
 //Même chose pour "Habitat" que "habitat"
 enum class Animal {
