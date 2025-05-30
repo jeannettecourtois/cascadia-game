@@ -29,8 +29,6 @@ public:
             f<< "Les saumons marquent des points en formant des migrations de 1 à 7 saumons, où chaque saumon est adjacent à un ou deux autres maximum.\n";
             break;
 
-            default: 
-            f<<"Carte famille\n";
 
 
         }
