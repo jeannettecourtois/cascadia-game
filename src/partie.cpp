@@ -180,7 +180,7 @@ void Partie::jouerTour() {
                     break;
                 }
                 int x, y;
-                cout << "Où souhaitez-vous placer la tuile ? (x,y) : ";
+                cout << "Où souhaitez-vous placer la tuile ? (x,y) : "; // pas avec la position mais avec les cardinaux d'un id de tuile déjà placée
                 cout << " x : ";
                 cin >> x;
                 cout << " y : ";
@@ -209,7 +209,12 @@ void Partie::jouerTour() {
                     cout << "Aucune tuile placée à cette position. Veuillez sélectionner un tuile déjà placée." << endl;
                     break;
                 }
-                
+                // Vérifier si le jeton peut être placé sur la tuile
+                if (!tuilePlacee->getTuile()->contientAnimal(animalJetonSelectionne)) {
+                    cout << "Le jeton faune ne peut pas être placé sur cette tuile." << endl;
+                    break;
+                }
+
                 Action* action = new ActionPlacerJeton(animalJetonSelectionne, tuilePlacee); //recupérer l'animal sélectionné dans la pioche et la tuile placée correspondante à la position
                 controleur->executerAction(action);
                 jetonPlace = true;

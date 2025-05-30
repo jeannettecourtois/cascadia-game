@@ -26,6 +26,7 @@ static void createNewGame() {
     catch (...) {cerr << "Erreur inconnue lors de la création de la partie." << endl;}
 }
 
+
 int main() {
     cout << "Initalisation de la partie..." << endl;
     ControleurGeneral CG;
