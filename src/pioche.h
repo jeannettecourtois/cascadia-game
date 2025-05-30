@@ -26,8 +26,8 @@ private:
 public:
     SacJeton();
     ~SacJeton();
-    Animal* Piocher();
-    void mettreDansLeSac(const Animal& a);
+    animal* Piocher();
+    void mettreDansLeSac(animal);
 };
 
 class Pioche {

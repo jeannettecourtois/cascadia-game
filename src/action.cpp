@@ -15,7 +15,10 @@ void ActionSelectionJeton::annuler() {}
 
 ActionPlacerTuile::ActionPlacerTuile(Tuile* t, Position p) : tuile(t), pos(p) {}
 ActionPlacerTuile::~ActionPlacerTuile() {}
-void ActionPlacerTuile::executer() {}
+void ActionPlacerTuile::executer() {
+    //indiquer la position de la tuile
+    //donner un indice
+}
 void ActionPlacerTuile::annuler() {}
 
 ActionPlacerJeton::ActionPlacerJeton(animalOuPas j, TuilePlacee* c) : jeton(j), cible(c) {}
