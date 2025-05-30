@@ -43,7 +43,7 @@ public:
     void preparerPioche();
     void afficherTuilesDisponibles() const;
     void selectionnerTuile();
-    void selectionnerJeton();
+    void selectionnerJeton() const;
     Tuile* getTuile(int i) const { return tuiles[i]; }
     animalOuPas getJeton(int i) const { return jetons[i]; }
 };

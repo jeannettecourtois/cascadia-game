@@ -51,7 +51,7 @@ void Pioche::selectionnerTuile() {
     idTuileChoisis = rand() % 4;
 }
 
-void Pioche::selectionnerJeton() {
+void Pioche::selectionnerJeton() const {
     // Sélectionner un jeton parmi ceux disponibles
     int idJetonChoisis = rand() % 4;
     animalOuPas jetonChoisi = jetons[idJetonChoisis];
