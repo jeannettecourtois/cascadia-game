@@ -16,12 +16,9 @@ SacJeton::~SacJeton() {}
 
 Animal* SacJeton::Piocher() {return nullptr;} //à changer, juste pour compiler coder
 
-<<<<<<< HEAD
 void SacJeton::mettreDansLeSac(Animal) {}
-=======
-void SacJeton::mettreDansLeSac(const Animal& a) {}
->>>>>>> 098c722653c42eedd140c73b084b9ba11b5f13fc
 
+void SacJeton::mettreDansLeSac(const Animal& a) {}
 
 Pioche::Pioche() {
     for (int i = 0; i < 4; ++i) {

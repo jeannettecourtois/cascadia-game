@@ -27,9 +27,10 @@ static void createNewGame() {
 }
 
 int main() {
+    cout << "Initalisation de la partie..." << endl;
+    ControleurGeneral CG;
     cout << "Bienvenue dans Cascadia - Version Console" << endl;
     try {
-        // permet de déporter dans fonction
         if (askLoadGame()) {
             // pour l'instant permet juste d'éviter une variable globale
             string filename = askFilename();

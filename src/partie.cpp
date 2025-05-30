@@ -15,7 +15,7 @@ ControleurTour::~ControleurTour() {
     listeActions.clear();
 }
 
-void ControleurTour::executerAction(Action* a)
+void ControleurTour::executerAction(Action* a) {
     a->executer();
     listeActions.push_back(a);
 }
