@@ -24,7 +24,7 @@ TuileDepart::~TuileDepart() {
     }
 }
 
-ControleurGeneral::ControleurGeneral() : nbTuilesHabitat(85), nbJetonFaune(100), nbJetonsNature(25), nbCartesMarquageFaune(21){
+ControleurGeneral::ControleurGeneral(): nbTuilesHabitat(85), nbJetonFaune(100), nbJetonsNature(25), nbCartesMarquageFaune(21), gen(rd()), distTuiles(0, 84), distJetons(0, 99), distCartes(0, 20){
     //construction des jetons Faune
     //20 Ours 
     for(unsigned int i=0; i<20; ++i){ tabJetons[i] = new JetonFaune(Animal::Ours);}
