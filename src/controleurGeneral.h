@@ -5,6 +5,7 @@
 #include "carteMarquageFaune.h"
 #include "enum.h"
 #include "affichable.h"
+#include <random>
 
 class TuileDepart {
 public:
@@ -67,5 +68,28 @@ class ControleurGeneral: public affichable{
     void afficher(std::ostream& f=std::cout ) const{
         f << "Le jeu peut commencer. \n";
     }
+
+    //méthodes permettant de récupérer des les objets construits 
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dist1(0, 99);
+    std::uniform_int_distribution<> dist2(0, 84);
+    std::uniform_int_distribution<> dist3(0, 20);
+
+    Tuile* getTuile(unsigned int indice){
+        indice = dist1(gen);
+        return tabTuiles[indice];
+    }
+    JetonFaune* getJetonFaune(unsigned int indice){
+        indice = dist2(gen); 
+        return tabJetons[indice];
+    }
+
+    CarteMarquageFaune* getCarteMarquageFaube(unsigned int indice){
+        indice = dist3(gen);
+        return tabCartesMarquage[indice];
+    }
+
+
 };
 
