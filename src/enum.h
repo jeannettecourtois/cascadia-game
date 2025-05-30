@@ -1,5 +1,6 @@
 #pragma once
 #include <initializer_list>
+#include <iostream>
 //Mieux d'utiliser "Animal" que "animal"
 //Même chose pour "Habitat" que "habitat"
 enum class Animal {
@@ -18,6 +19,18 @@ enum class animalOuPas {
     Aigle,
     Renard
 };
+
+std::ostream& operator<<(std::ostream& f, const animalOuPas& animal) {
+    switch (animal) {
+    case animalOuPas::Vide: f << "Vide"; break;
+    case animalOuPas::Ours: f << "Ours"; break;
+    case animalOuPas::Cerf: f << "Cerf"; break;
+    case animalOuPas::Saumon: f << "Saumon"; break;
+    case animalOuPas::Aigle: f << "Aigle"; break;
+    case animalOuPas::Renard: f << "Renard";break;
+    }
+    return f;
+}
 
 enum class Habitat {
     Montagne,

@@ -3,12 +3,14 @@
 #include "enum.h"
 
 
-class Action {
+class Action { //classe abstraite
 public:
-    void executer();
-    void annuler();
+    virtual void executer()=0; //méthode virtuelle pure, définition dans les classes dérivées
+    virtual void annuler()=0; //méthode virtuelle pure
+    virtual ~Action() = default; // destructeur virtuel car la classe est sous-classée
 };
 
+// Selection de tuile dans la pioche
 class ActionSelectionTuile: public Action {
 private:
     Tuile* tuileSelection;
@@ -19,6 +21,7 @@ public:
     void annuler();
 };
 
+// Selection de jeton dans la pioche
 class ActionSelectionJeton: public Action {
 private:
     animalOuPas jetonSelection;
@@ -29,6 +32,7 @@ public:
     void annuler();
 };
 
+// Placer une tuile sur le plateau
 class ActionPlacerTuile: public Action {
 private:
     Tuile* tuile;
@@ -40,6 +44,7 @@ public:
     void annuler();
 };
 
+// Placer un jeton sur une tuile qui est déjà placée
 class ActionPlacerJeton: public Action {
 private:
     TuilePlacee* cible;
@@ -51,14 +56,15 @@ public:
     void annuler();
 };
 
-class ActionUtiliserJetonNature: public Action {
+
+class ActionUtiliserJetonNature: public Action { //classe abstraite
 private:
     Action* actionCible;
 public:
     ActionUtiliserJetonNature(Action* a);
-    ~ActionUtiliserJetonNature();
-    void executer();
-    void annuler();
+    virtual ~ActionUtiliserJetonNature();
+    virtual void executer()=0; //méthode virtuelle pure
+    virtual void annuler()=0; //méthode virtuelle pure
 };
 
 class SelectionTuileJeton : public ActionUtiliserJetonNature {

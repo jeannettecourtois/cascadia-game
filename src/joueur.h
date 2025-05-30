@@ -16,6 +16,15 @@ public:
     void ajouterTuile(const TuilePlacee*);
     void ajouterTuileDepart(const TuileDepart* set);
     int getNbTuiles() const { return nbTuiles; }
+    void afficherPlateau() const;
+    TuilePlacee* getTuilePlacee(const Position& pos) const {
+        for (int i = 0; i < nbTuiles; ++i) {
+            if (tuiles[i]->getPosition() == pos) {
+                return tuiles[i];
+            }
+        }
+        return nullptr; // Si aucune tuile n'est trouvée à cette position
+    }
 };
 
 

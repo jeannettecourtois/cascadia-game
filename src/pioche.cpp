@@ -16,7 +16,11 @@ SacJeton::~SacJeton() {}
 
 Animal* SacJeton::Piocher() {return nullptr;} //à changer, juste pour compiler coder
 
+<<<<<<< HEAD
 void SacJeton::mettreDansLeSac(Animal) {}
+=======
+void SacJeton::mettreDansLeSac(const Animal& a) {}
+>>>>>>> 098c722653c42eedd140c73b084b9ba11b5f13fc
 
 
 Pioche::Pioche() {
@@ -54,4 +58,15 @@ void Pioche::selectionnerJeton() {
     // Sélectionner un jeton parmi ceux disponibles
     int idJetonChoisis = rand() % 4;
     animalOuPas jetonChoisi = jetons[idJetonChoisis];
+}
+
+void Pioche::afficherTuilesDisponibles() const {
+    std::cout << "Tuiles disponibles dans la pioche :\n";
+    for (int i = 0; i < 4; ++i) {
+        if (tuiles[i]) {
+            std::cout << "Tuile " << i << ": " << tuiles[i]->afficherTuile() << "\n";
+        } else {
+            std::cout << "Tuile " << i << ": Vide\n";
+        }
+    }
 }

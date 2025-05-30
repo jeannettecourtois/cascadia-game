@@ -122,6 +122,7 @@
     <ClCompile Include="src\action.cpp" />
     <ClCompile Include="src\carteMarquageFaune.cpp" />
     <ClCompile Include="src\controleurGeneral.cpp" />
+    <ClCompile Include="src\fileHandler.cpp" />
     <ClCompile Include="src\joueur.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\partie.cpp" />
@@ -131,9 +132,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\action.h" />
+    <ClInclude Include="src\affichable.h" />
     <ClInclude Include="src\carteMarquageFaune.h" />
     <ClInclude Include="src\controleurGeneral.h" />
     <ClInclude Include="src\enum.h" />
+    <ClInclude Include="src\fileHandler.h" />
     <ClInclude Include="src\joueur.h" />
     <ClInclude Include="src\partie.h" />
     <ClInclude Include="src\pioche.h" />

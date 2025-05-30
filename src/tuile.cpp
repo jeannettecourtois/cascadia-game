@@ -1,11 +1,6 @@
 #include "tuile.h"
 #include <random>
 
-
-
-
-
-
 Tuile::~Tuile() {
     for(unsigned int i = 0; i<nbAnimaux; ++i){
         delete listeAnimaux[i];
@@ -17,6 +12,14 @@ Tuile::~Tuile() {
     delete[] listeHabitat;
 }
 
+bool contientAnimal(const std::string& animal) {
+    for (unsigned int i = 0; i < nbAnimaux; ++i) {
+        if (listeAnimaux[i] == animal) {
+            return true;
+        }
+    }
+    return false;
+}
 
 /*
 Keystone::Keystone() : Tuile() {}
