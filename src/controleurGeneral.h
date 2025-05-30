@@ -26,21 +26,11 @@ public:
     Animal getAnimal() const{return ani;}
     void afficher(std::ostream& f=std::cout ) const override{
         switch(ani){
-            case Animal::Ours: 
-            f << "L'animal est un ours. \n";
-            break;
-            case Animal::Cerf: 
-            f <<"L'animal s'agit d'un cerf.\n";
-            break; 
-            case Animal::Saumon: 
-            f <<"L'animal s'agit d'un saumon.\n";
-            break;
-            case Animal::Aigle: 
-            f <<"L'animal s'agit d'un aigle.\n";
-            break;
-            case Animal::Renard: 
-            f <<"L'animal s'agit d'un renard.\n";
-            break;
+            case Animal::Ours: f << "L'animal est un ours. \n"; break;
+            case Animal::Cerf: f <<"L'animal s'agit d'un cerf.\n"; break; 
+            case Animal::Saumon: f <<"L'animal s'agit d'un saumon.\n"; break;
+            case Animal::Aigle: f <<"L'animal s'agit d'un aigle.\n"; break;
+            case Animal::Renard: f <<"L'animal s'agit d'un renard.\n"; break;
         }
     }
 };
@@ -59,11 +49,11 @@ private:
     int nbJetonFaune;
     int nbJetonsNature;
     int nbCartesMarquageFaune;
-
+    //
     JetonFaune* tabJetons[100];
     Tuile* tabTuiles[85];
     CarteMarquageFaune* tabCartesMarquage[15];
-
+    //
     std::random_device rd;
     std::mt19937 gen;
     std::uniform_int_distribution<> distTuiles;
@@ -72,26 +62,42 @@ private:
 
 public:
     ControleurGeneral();
-
     ~ControleurGeneral();
-
     ControleurGeneral(const ControleurGeneral&) = delete;
-
-    void afficher(std::ostream& f = std::cout) const override {
-        f << "Le jeu peut commencer.\n";
-    }
-
-    Tuile* getTuile() {
-        return tabTuiles[distTuiles(gen)];
-    }
-
-    JetonFaune* getJetonFaune() {
-        return tabJetons[distJetons(gen)];
-    }
-
-    CarteMarquageFaune* getCarteMarquageFaune() {
-        return tabCartesMarquage[distCartes(gen)];
-    }
+    void afficher(std::ostream& f = std::cout) const override { f << "Le jeu peut commencer.\n"; }
+    Tuile* getTuile() { return tabTuiles[distTuiles(gen)]; }
+    JetonFaune* getJetonFaune() { return tabJetons[distJetons(gen)]; }
+    CarteMarquageFaune* getCarteMarquageFaune() { return tabCartesMarquage[distCartes(gen)]; }
 };
+
+// Env Test
+namespace singleton{
+    class ControleurGeneral : public affichable {
+    private:
+        int nbTuilesHabitat;
+        int nbJetonFaune;
+        int nbJetonsNature;
+        int nbCartesMarquageFaune;
+        //
+        JetonFaune* tabJetons[100];
+        Tuile* tabTuiles[85];
+        CarteMarquageFaune* tabCartesMarquage[15];
+        //
+        std::random_device rd;
+        std::mt19937 gen;
+        std::uniform_int_distribution<> distTuiles;
+        std::uniform_int_distribution<> distJetons;
+        std::uniform_int_distribution<> distCartes;
+
+    public:
+        ControleurGeneral();
+        ~ControleurGeneral();
+        ControleurGeneral(const ControleurGeneral&) = delete;
+        void afficher(std::ostream& f = std::cout) const override { f << "Le jeu peut commencer.\n"; }
+        Tuile* getTuile() { return tabTuiles[distTuiles(gen)]; }
+        JetonFaune* getJetonFaune() { return tabJetons[distJetons(gen)]; }
+        CarteMarquageFaune* getCarteMarquageFaune() { return tabCartesMarquage[distCartes(gen)]; }
+    };
+}
 
 
