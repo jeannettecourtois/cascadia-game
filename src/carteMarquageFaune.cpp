@@ -17,7 +17,7 @@ int CarteMarquageFauneParMasque::calculPoints(PlateauJoueur&) {
 }
 
 
-CarteMarquageFauneParDiversiteDeType::CarteMarquageFauneParDiversiteDeType(Animal a) : CarteMarquageFaune(a) {}
+CarteMarquageFauneParDiversiteDeType::CarteMarquageFauneParDiversiteDeType(const Animal& a) : CarteMarquageFaune(a) {}
 CarteMarquageFauneParDiversiteDeType::~CarteMarquageFauneParDiversiteDeType() {}
 
 int CarteMarquageFauneParDiversiteDeType::calculPoints(PlateauJoueur&) {

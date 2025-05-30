@@ -48,6 +48,7 @@ public:
 class CarteMarquageFauneParDiversiteDeType : public CarteMarquageFaune {//Utile pour le renard
 public:
     CarteMarquageFauneParDiversiteDeType(Animal a);
+    CarteMarquageFauneParDiversiteDeType(const Animal& a);
     ~CarteMarquageFauneParDiversiteDeType();
     int calculPoints(PlateauJoueur&);
 };
