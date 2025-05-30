@@ -40,6 +40,8 @@ public:
 
     ~Tuile();
 
+    bool contientAnimal(const Animal& a) const;
+
     int getNbHabitat() const { return nbHabitat; }
     int getNbAnimaux() const { return nbAnimaux; }
     void afficherTuile(std::ostream& f = std::cout) const {
