@@ -62,7 +62,7 @@ private:
 
     JetonFaune* tabJetons[100];
     Tuile* tabTuiles[85];
-    CarteMarquageFaune* tabCartesMarquage[21];
+    CarteMarquageFaune* tabCartesMarquage[15];
 
     std::random_device rd;
     std::mt19937 gen;
@@ -71,17 +71,7 @@ private:
     std::uniform_int_distribution<> distCartes;
 
 public:
-    ControleurGeneral()
-        : nbTuilesHabitat(85),
-          nbJetonFaune(100),
-          nbJetonsNature(25),
-          nbCartesMarquageFaune(21),
-          gen(rd()),
-          distTuiles(0, 84),
-          distJetons(0, 99),
-          distCartes(0, 20) {
-        
-    }
+    ControleurGeneral();
 
     ~ControleurGeneral();
 
