@@ -13,14 +13,12 @@ using namespace std;
 
 static void createNewGame() {
     cout << "Création d'une nouvelle partie" << endl;
-    int nbHumanPlayers = askNumberOfPlayers();
-    cout << "Nombre de joueurs sélectionné : " << nbHumanPlayers << endl;
+    int nbPlayers = askNumberOfPlayers();
+    cout << "Nombre de joueurs sélectionné : " << nbPlayers << endl;
     try {
-        /*
-        LANCER JEU
-        //ControleurGeneral::
-        */
-        cout << "LANCER JEU" << endl; // temporaire
+        cout << "Lancement du jeu ! " << endl;
+        Partie partie(nbPlayers);
+        partie.initialiserPartie();
     }
     catch (const exception& e) {cerr << "Erreur lors de la création de la partie : " << e.what() << endl;}
     catch (...) {cerr << "Erreur inconnue lors de la création de la partie." << endl;}
