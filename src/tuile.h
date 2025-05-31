@@ -7,7 +7,7 @@
 
 
 
-class Tuile {
+class Tuile : public affichable{
 private:
     unsigned int nbAnimaux;
     unsigned int nbHabitat;
@@ -44,7 +44,7 @@ public:
 
     int getNbHabitat() const { return nbHabitat; }
     int getNbAnimaux() const { return nbAnimaux; }
-    void afficherTuile(std::ostream& f = std::cout) const {
+    void afficher(std::ostream& f = std::cout) const override {
         f << "Tuile avec " << nbAnimaux << " animaux et " << nbHabitat << " habitats.\n";
         f << "Animaux : ";
         for (unsigned int i = 0; i < nbAnimaux; ++i) {

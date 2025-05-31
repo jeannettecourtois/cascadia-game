@@ -1,11 +1,11 @@
 #pragma once
-
+#include <limits>
 #include <string>
 #include <iostream>
 #include <fstream>  // pour la gestion des fichiers
 
-/* Pour l'instant gère un ajout très simple de données dans un txt :
-    - Pourrait valoir le coup de passer à un csv ou json*/
+/* Pour l'instant gï¿½re un ajout trï¿½s simple de donnï¿½es dans un txt :
+    - Pourrait valoir le coup de passer ï¿½ un csv ou json*/
 
 using namespace std;
 
@@ -24,23 +24,23 @@ static string askFilename() {
 bool askLoadGame() {
     string input;
     while (true) {
-        cout << "Voulez-vous charger une partie sauvegardée ? (y/n) : ";
+        cout << "Voulez-vous charger une partie sauvegardï¿½e ? (y/n) : ";
         cin >> input;
         if (input == "y" || input == "Y") return true;
         else if (input == "n" || input == "N") return false;
-        else cout << "Réponse invalide, veuillez entrer 'y' ou 'n'." << endl;
+        else cout << "Rï¿½ponse invalide, veuillez entrer 'y' ou 'n'." << endl;
     }
 }
 
 static int askNumberOfPlayers() {
     int nbPlayers = -1;
     while (nbPlayers < 0 || nbPlayers > 4) {
-        cout << "Combien de joueurs ? (1 à 4) : ";
+        cout << "Combien de joueurs ? (1 ï¿½ 4) : ";
         cin >> nbPlayers;
         if (cin.fail()) {
             cin.clear();
             cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            cout << "Entrée invalide, veuillez entrer un nombre entre 1 et 4 inclus." << endl;
+            cout << "Entrï¿½e invalide, veuillez entrer un nombre entre 1 et 4 inclus." << endl;
             nbPlayers = -1;
         }
     }
