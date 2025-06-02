@@ -61,7 +61,7 @@ void Pioche::afficherTuilesDisponibles() const {
     std::cout << "Tuiles disponibles dans la pioche :\n";
     for (int i = 0; i < 4; ++i) {
         if (tuiles[i]) {
-            std::cout << "Tuile " << i << ": "; tuiles[i]->afficherTuile(); cout << "\n";
+            std::cout << "Tuile " << i << ": "; tuiles[i]->afficher(); cout << "\n";
         } else {
             std::cout << "Tuile " << i << ": Vide\n";
         }

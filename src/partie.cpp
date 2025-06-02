@@ -93,12 +93,12 @@ void Partie::initialiserPartie() {
 
     // Sélection aléatoire de 5 cartes de marquage faune
     for (int i = 0; i < 5; ++i) {
-        cartesRegles[i] = ctrl.getCarteRegleAleatoire();
+        cartesRegles[i] = ctrl.getCarteMarquageFaune();
         cout << "Carte règle faune " << i+1 << " sélectionnée." << std::endl;
     }
 
     // Sélection d’un set de 3 tuiles de départ (même pour tous les joueurs)
-    TuileDepart* set = ctrl.getTuilesDepartAleatoires(); // un tableau de 3 tuiles
+    TuileDepart* set = ctrl.getTuile(); // un tableau de 3 tuiles
     cout << "Set de tuiles de départ généré." << std::endl;
 
     // Distribution d'une copie du set à chaque joueur

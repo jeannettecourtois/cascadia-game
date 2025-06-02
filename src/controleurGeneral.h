@@ -7,7 +7,7 @@
 #include "affichable.h"
 #include <random>
 #include <iostream>
-
+#include <mutex>
 class TuileDepart {
 public:
     TuilePlacee* tuiles[3];
@@ -47,15 +47,19 @@ class jetonNature : public affichable{
 
 class ControleurGeneral : public affichable {
 private:
+    static ControleurGeneral* instancePtr;
+    static std::mutex mtx;
+    ControleurGeneral(); // constructeur privé
+
     int nbTuilesHabitat;
     int nbJetonFaune;
     int nbJetonsNature;
     int nbCartesMarquageFaune;
-    //
+
     JetonFaune* tabJetons[100];
     Tuile* tabTuiles[85];
     CarteMarquageFaune* tabCartesMarquage[15];
-    //
+
     std::random_device rd;
     std::mt19937 gen;
     std::uniform_int_distribution<> distTuiles;
@@ -63,44 +67,14 @@ private:
     std::uniform_int_distribution<> distCartes;
 
 public:
-    ControleurGeneral();
     ~ControleurGeneral();
     ControleurGeneral(const ControleurGeneral&) = delete;
-    void afficher(std::ostream& f = std::cout) const override { f << "Le jeu peut commencer.\n"; }
-    Tuile* getTuile() { return tabTuiles[distTuiles(gen)]; }
-    JetonFaune* getJetonFaune() { return tabJetons[distJetons(gen)]; }
-    CarteMarquageFaune* getCarteMarquageFaune() { return tabCartesMarquage[distCartes(gen)]; }
-    //CarteMarquageFaune* ControleurGeneral::getCarteRegleAleatoire()
+    ControleurGeneral& operator=(const ControleurGeneral&) = delete;
+
+    static ControleurGeneral& getInstance(); // <-- IMPORTANT : référence !
+
+    void afficher(std::ostream& f = std::cout) const override;
+    Tuile* getTuile();
+    JetonFaune* getJetonFaune();
+    CarteMarquageFaune* getCarteMarquageFaune();
 };
-
-// Env Test
-namespace singleton{
-    class ControleurGeneral : public affichable {
-    private:
-        int nbTuilesHabitat;
-        int nbJetonFaune;
-        int nbJetonsNature;
-        int nbCartesMarquageFaune;
-        //
-        JetonFaune* tabJetons[100];
-        Tuile* tabTuiles[85];
-        CarteMarquageFaune* tabCartesMarquage[15];
-        //
-        std::random_device rd;
-        std::mt19937 gen;
-        std::uniform_int_distribution<> distTuiles;
-        std::uniform_int_distribution<> distJetons;
-        std::uniform_int_distribution<> distCartes;
-
-    public:
-        ControleurGeneral();
-        ~ControleurGeneral();
-        ControleurGeneral(const ControleurGeneral&) = delete;
-        void afficher(std::ostream& f = std::cout) const override { f << "Le jeu peut commencer.\n"; }
-        Tuile* getTuile() { return tabTuiles[distTuiles(gen)]; }
-        JetonFaune* getJetonFaune() { return tabJetons[distJetons(gen)]; }
-        CarteMarquageFaune* getCarteMarquageFaune() { return tabCartesMarquage[distCartes(gen)]; }
-    };
-}
-
-

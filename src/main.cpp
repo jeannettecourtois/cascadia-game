@@ -27,7 +27,8 @@ static void createNewGame() {
 
 int main() {
     cout << "Initalisation de la partie..." << endl;
-    ControleurGeneral CG;
+    ControleurGeneral& CG = ControleurGeneral::getInstance();
+
     cout << "Bienvenue dans Cascadia - Version Console" << endl;
     try {
         if (askLoadGame()) {
