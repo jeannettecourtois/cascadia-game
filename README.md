@@ -1,16 +1,6 @@
 # Cascadia
 
-## Répartition
-- [ ] Action			Jeanne
-- [ ] CarteMarquageFaune	Alexandre
-- [ ] ControleurGeneral	Jeanette
-- [ ] Joueur			Corentin
-- [x] Partie			Jeanne
-- [ ] Pioche			Alexandre
-- [ ] TuilePlacee		Corentin
-- [ ] Tuile			Yan
-- [x] Debbug de départ 	Yan
-- [ ] README Yan
+
 
 <details><summary>Convention typage C++</summary>
 
