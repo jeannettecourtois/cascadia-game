@@ -1,91 +1,43 @@
-# Cascadia
+Cascadia – Implémentation C++ (console + base Qt)
+
+Projet universitaire (UTC – LO21) : implémentation du jeu de plateau Cascadia en C++.
+Le code suit les règles officielles (pose de tuiles hexagonales, placement de jetons Faune, surpopulation, jetons Nature, scoring par cartes Faune et couloirs d’habitats), avec une interface console complète et une base d’interface Qt (squelette) pour une future GUI. Référence règles : livret officiel de Cascadia.
+
+✨ Fonctionnalités
+
+Partie solo et multijoueurs (2–4), déroulement complet de tours.
+
+Pioche/renouvellement de tuiles Habitat et jetons Faune, gestion de la surpopulation (3/4 identiques) et Jetons Nature.
+
+Vérifications de règles : compatibilité des jetons avec les habitats, cases libres, ordre des actions du tour.
+
+Scoring automatique : cartes de marquage Faune (Ours, Wapiti, Saumon, Buse, Renard) + couloirs d’habitats + majorités + jetons Nature.
+
+Sauvegarde / reprise de partie en JSON (état du plateau, pioche, cartes, historique d’actions).
+
+Modèle orienté objet & design patterns (Singleton pour ControleurGeneral et Partie, système d’Actions sérialisables pour exécuter/annuler).
+
+Plateau hexagonal en coordonnées axiales (SE/SW/W/E/NW/NE) pour une gestion propre des voisins.
+
+Une première base Qt (architecture MVC) est fournie : MainWindow, PlateauGraphique, TuileGraphique (non finalisée).
+
+🧱 Architecture (aperçu)
+
+Modèle : Tuile, Jeton, PlateauJoueur (liste de TuilePlacee avec position axiale, rotation, jeton optionnel).
+
+Contrôle : ControleurGeneral (réserve globale tuiles/jetons/cartes), Partie (orchestration joueurs/tours/pioche), ControleurTour.
+
+Actions (pattern Command) : ActionSelectionTuile, ActionPlacerTuile, ActionSelectionJeton, ActionPlacerJeton + annuler() et sérialisation JSON.
+
+I/O : console (affichage plateau stylisé + prompts) et persistance JSON (sauvegarde/chargement).
+
+📦 Prérequis
+
+C++17 ou plus
+
+CMake (recommandé) ou g++/clang++
+
+(Optionnel) Qt 6 pour tester la base GUI
 
 
-
-<details><summary>Convention typage C++</summary>
-
-### 1. Noms de Variables
-
-- **Variables locales** : Utilisez le style `camelCase`.
-  - Exemple :
-    ```cpp
-    int myVariable = 10;
-    double distanceInKm = 15.5;
-    ```
-
-- **Variables globales** : Préfixez les variables globales avec `g_` en utilisant le style `snake_case`.
-  - Exemple :
-    ```cpp
-    int g_maxValue;
-    double g_currentSpeed;
-    ```
-
-- **Constantes** : Utilisez le style `UPPER_SNAKE_CASE` pour les constantes et les macros.
-  - Exemple :
-    ```cpp
-    const int MAX_VALUE = 100;
-    #define PI 3.14159
-    ```
-
-- **Pointeurs** : Utilisez le type suivi de l'astérisque (`*`) à côté du nom de la variable (plutôt que de l'ajouter au type).
-  - Exemple :
-    ```cpp
-    int* pInt;
-    char* pChar;
-    ```
-
-## 2. Noms de Fonctions
-
-- **Fonctions** : Utilisez le style `camelCase` pour les noms de fonctions.
-  - Exemple :
-    ```cpp
-    void calculateTotal() { }
-    int findMax(int a, int b) { return a > b ? a : b; }
-    ```
-
-- **Fonctions membres** : Utilisez également le style `camelCase` pour les noms de fonctions membres.
-  - Exemple :
-    ```cpp
-    class MyClass {
-    public:
-        void doSomething();
-    private:
-        int myVar;
-    };
-    ```
-
-- **Fonctions de type getter/setter** : Les getters commencent par `get` et les setters par `set`, suivis de la variable concernée.
-  - Exemple :
-    ```cpp
-    int getAge() const { return age; }
-    void setAge(int newAge) { age = newAge; }
-    ```
-
-## 3. Noms de Classes et Structs
-
-- Utilisez le style `PascalCase` pour les classes et structs.
-  - Exemple :
-    ```cpp
-    class Person {};
-    struct Employee {};
-    ```
-
-- Pour les structures ou classes qui représentent une ressource système ou une entité dans le domaine, utilisez un nom explicite.
-  - Exemple :
-    ```cpp
-    class DatabaseConnection {};
-    ```
-
-## 4. Noms de Fichiers
-
-- Les fichiers d'en-tête (`.h`, `.hpp`) et de source (`.cpp`) doivent être en `camelCase`.
-  - Exemple : 
-    ```text
-    my_class.hpp
-    database_connection.cpp
-    ```
-
-</details>
-
-## UML
 ![](UML.png)
